@@ -5,3 +5,4 @@ Teaching documents for Jiemian IT College, Hunan, China.
 
 Nov.3, 2018
 - Initalize project using Github.
+- Tidy the folders.
