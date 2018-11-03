@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<link rel="stylesheet" type="text/css" href="../assets/markdown.css">
+</head>
+<body class="markdown-body">
+<h1>CSS</h1>
+<h3>简介</h3>
+<blockquote>
+<p>众所周知，HTML标签是网页的主体内容，是功能的骨干。但给用户的体验不好，在于它们没有好看的外表和动人的布局。<br></p>
+</blockquote>
+<h4>所以！嘻嘻嘻！CSS就出现了！</h4>
+<h2>CSS引入方式</h2>
+<h3>行内引用</h3>
+<blockquote>
+<ol>
+<li>在元素中添加一个style属性，在style属性内写样式。<br></li>
+<li>注意每个CSS属性后，加分号。</li>
+</ol>
+</blockquote>
+<pre><code>&lt;span style=&quot;font-size: 36px;&quot;&gt;嘤嘤怪&lt;/span&gt;
+</code></pre>
+
+<h3>页内引用</h3>
+<blockquote>
+<ol>
+<li>在head标签内，加上一个<code>&lt;style&gt;</code>，在style标签内写样式。<br></li>
+<li>注意页内引用的写法比行内引用多了一个选择器。</li>
+</ol>
+</blockquote>
+<h4>栗子：页面里所有的span标签，设置骚粉色与“微软雅黑”字体。</h4>
+<pre><code>&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;网页标题&lt;/title&gt;
+
+    &lt;style&gt;
+        span {
+            color: crimson;
+            font-family: 'Microsoft Yahei';
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+
+<h3>外部引用（重点）</h3>
+<blockquote>
+<ol>
+<li>企业内常用的引入方式。在html文件以外，新建一个css文件，在css文件里面写样式。<br></li>
+<li>在html的head标签内，加上一个link标签，在href属性里填入css文件的地址。</li>
+<li>link标签里面的rel属性是必须写的：<code>rel=&quot;stylesheet&quot;</code></li>
+</ol>
+</blockquote>
+<p>css文件：<br></p>
+<pre><code>span {
+    margin-left: 40px;
+    font-weight: bold;
+}
+</code></pre>
+
+<p>html文件：<br></p>
+<pre><code>&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;网页标题&lt;/title&gt;
+
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/index.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+
+<h3>引用优先级问题</h3>
+<blockquote>
+<p>行内 &gt; 页内 = 外部 （看选择器精确度）</p>
+<p>若选择器精确度一样，没有可比性，后写会赋予样式。</p>
+</blockquote>
+<h4>无敌（!important）</h4>
+<blockquote>
+<ol>
+<li>给样式设置“无敌”，这个样式的优先级会被置顶。</li>
+<li>!important写在样式的属性值后，分号之前。</li>
+</ol>
+</blockquote>
+<pre><code>input {
+    color: greenyellow !important;
+}
+</code></pre>
+
+<h3>注释</h3>
+<blockquote>
+<p>CSS语法里面也有注释这一概念，可以帮助自己或者队友清晰代码结构。</p>
+</blockquote>
+<pre><code>input {
+    /* 设置字体颜色为秦始黄 */
+    color: greenyellow !important;
+}
+</code></pre>
+
+<h2>CSS选择器</h2>
+<blockquote>
+<p>当我们写页内或外部样式的时候，问题来了，样式该赋予给谁呢？
+所以页内引入或外部引入，不能直接写样式，必须加上选择器。</p>
+</blockquote>
+<h3>通配选择符（*）</h3>
+<blockquote>
+<p>所有的元素都会匹配上，但是优先级很低，可以作为清除样式，字体样式的设置。</p>
+</blockquote>
+<pre><code>* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft Yahei';
+}
+</code></pre>
+
+<h3>元素选择符</h3>
+<blockquote>
+<p>页面内的所有特定的（被选择的）元素，都会赋予样式。<br>
+读作：页面内的所有XX元素，都会赋予......样式。</p>
+</blockquote>
+<pre><code>section {
+    background-color: lightblue;
+}
+</code></pre>
+
+<h3>群组选择符（,）</h3>
+<blockquote>
+<p>若需要两个或以上的元素/选择器，赋予相同的样式。可以在选择器后加一个逗号（,）表示，这一组选择器赋予相同的样式。</p>
+</blockquote>
+<pre><code>h1, h2, p {
+    color: yellowgreen;
+}
+</code></pre>
+
+<h3>关系选择符</h3>
+<h4>包含选择符（空格）</h4>
+<blockquote>
+<p>元素里有的成分，都称为包含关系。<br>
+读作：XX里面的所有OO元素会赋予样式，如：<code>section li</code>。</p>
+</blockquote>
+<p>html代码：<br></p>
+<pre><code>&lt;section&gt;
+    &lt;input type=&quot;text&quot; name=&quot;&quot; style=&quot;color: crimson;&quot;&gt;
+    &lt;div&gt;
+        &lt;ul&gt;
+            &lt;li&gt;NO.1&lt;/li&gt;
+            &lt;li&gt;NO.2&lt;/li&gt;
+            &lt;li&gt;NO.3&lt;/li&gt;
+            &lt;li&gt;NO.4&lt;/li&gt;
+            &lt;li&gt;NO.5&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+&lt;/section&gt;
+</code></pre>
+
+<p>css代码：<br></p>
+<pre><code>section li {
+    text-shadow: 2px 2px 3px #000;
+}
+</code></pre>
+
+<h4>子选择符（selector1 &gt; selector2）</h4>
+<blockquote>
+<p>选择器之间只有一层包含关系的，称为父子关系。<br>
+读作：作为selector1儿子的selector2会赋予样式。</p>
+</blockquote>
+<p>html代码：<br></p>
+<pre><code>&lt;section&gt;
+    &lt;input type=&quot;text&quot; name=&quot;&quot; style=&quot;color: crimson;&quot;&gt;
+    &lt;div&gt;
+        &lt;div style=&quot;background-color: lightblue;&quot;&gt;123&lt;/div&gt;
+        &lt;ul&gt;
+            &lt;li&gt;NO.1&lt;/li&gt;
+            &lt;li&gt;NO.2&lt;/li&gt;
+            &lt;li&gt;NO.3&lt;/li&gt;
+            &lt;li&gt;NO.4&lt;/li&gt;
+            &lt;li&gt;NO.5&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+&lt;/section&gt;
+</code></pre>
+
+<p>css代码：<br></p>
+<pre><code>section &gt; div {
+    background-color: yellowgreen !important;
+}
+</code></pre>
+
+<blockquote>
+<p>说明：本来CSS样式里，加了“无敌”(important)，应该所有的div都会设置背景色为yellowgreen，但效果并没有。原因是，子选择符只会给儿子赋予样式。</p>
+</blockquote>
+<h4>相邻选择符（selector1 + selector2）</h4>
+<blockquote>
+<p>在selector1之后的，并且在它旁边（下一个）的selector2，表示相邻关系 。<br>
+读作：在selector1后面的，并与之相邻的selector2。</p>
+</blockquote>
+<p>html代码：<br></p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;NO.1&lt;/li&gt;
+    &lt;li&gt;NO.2&lt;/li&gt;
+    &lt;li&gt;NO.3&lt;/li&gt;
+    &lt;li&gt;NO.4&lt;/li&gt;
+    &lt;li&gt;NO.5&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>css代码：<br></p>
+<pre><code>li + li {
+    background-color: yellowgreen;
+}
+</code></pre>
+
+<blockquote>
+<p>说明：第一个li没有样式，因为读取到第一个li的时候，只有一个li，它前面并没有li与之相邻。第二个之后有样式是因为，它们之前都有一个作为相邻关系的li。</p>
+</blockquote>
+<h4>兄弟选择符（selector1 ~ selector2）</h4>
+<blockquote>
+<p>在selector1之后，作为同辈元素的selector2，有兄弟关系。<br>
+读作：selector1后面的，作为兄弟的selector2，赋予样式。</p>
+</blockquote>
+<p>html代码：<br></p>
+<pre><code>&lt;p&gt;I m p upwards!&lt;/p&gt;
+&lt;div&gt;This is a div!&lt;/div&gt;
+&lt;p&gt;This is a p!&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;NO.1&lt;/li&gt;
+    &lt;li&gt;NO.2&lt;/li&gt;
+    &lt;li&gt;NO.3&lt;/li&gt;
+    &lt;li&gt;NO.4&lt;/li&gt;
+    &lt;li&gt;NO.5&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>css代码：<br></p>
+<pre><code>p ~ * {
+    background-color: lightsalmon;
+}
+</code></pre>
+
+<blockquote>
+<p>说明：第一个p以外的，后面所有与之为兄弟的元素，都会赋予“亮西瓜红”背景色。</p>
+</blockquote>
+<h3>id选择器（#）</h3>
+<blockquote>
+<ol>
+<li>先在HTML里给将要赋予样式的元素写上id属性，然后在CSS里，写<code>#id名</code>，就可以赋予对应元素的样式了。<br></li>
+<li>id是唯一的，建议不要写多个id。</li>
+</ol>
+</blockquote>
+<p>html代码：<br></p>
+<pre><code>&lt;p id=&quot;container&quot;&gt;1234567&lt;/p&gt;
+&lt;!-- EMMET: p#container{1234567} --&gt;
+</code></pre>
+
+<p>css代码：<br></p>
+<pre><code>#container {
+    background-color: aqua;
+}
+</code></pre>
+
+<h3>class选择器（.）</h3>
+<blockquote>
+<ol>
+<li>与id选择器类似，class也需要先在HTML里面定义，然后再到CSS里面写样式。</li>
+<li>class选择器可以写无数遍。</li>
+</ol>
+</blockquote>
+<p>html代码：<br></p>
+<pre><code>&lt;p class=&quot;para&quot;&gt;1234567&lt;/p&gt;
+&lt;!-- EMMET: p.para{1234567} --&gt;
+</code></pre>
+
+<p>css代码：<br></p>
+<pre><code>.para {
+    background-color: brown;
+}
+</code></pre>
+
+<h3>伪类选择器（:）</h3>
+<blockquote>
+<ol>
+<li>特定条件下的元素样式，或者必须触发某种事件，才会有的样式。</li>
+<li>写伪类样式之前，必须先写好该元素通常情况下的样式。</li>
+</ol>
+</blockquote>
+<h4>鼠标悬停（:hover）</h4>
+<p>html代码：<br></p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;NO.1&lt;/li&gt;
+    &lt;li&gt;NO.2&lt;/li&gt;
+    &lt;li&gt;NO.3&lt;/li&gt;
+    &lt;li&gt;NO.4&lt;/li&gt;
+    &lt;li&gt;NO.5&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>css代码：<br></p>
+<pre><code>section li {
+    text-shadow: 2px 2px 3px #000;
+    /* 先写一个普通情况下的样式 */
+}
+
+section li:hover {
+    background-color: brown;
+}
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

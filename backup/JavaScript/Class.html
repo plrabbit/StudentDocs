@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>JavaScript内置类</h1>
+<h2>对象</h2>
+<blockquote>
+<p>JavaScript是一种面向对象的语言。</p>
+<p>对象就是由一些彼此相关的属性和方法集合在一起而构成的一个数据实体。</p>
+</blockquote>
+<h2>本地对象</h2>
+<h3>1. Date日期对象，处理日期和时间</h3>
+<pre><code>var myDate = new Date();
+</code></pre>
+
+<h4>年月日，星期</h4>
+<pre><code>myDate.getFullYear(); //获取完整的年份
+myDate.getMonth() + 1; //获取当前月份(0到11，0代表1月)
+myDate.getDate(); //获取当前日(1-31)
+myDate.getDay()); //获取当前星期X（0-6），0代表星期天
+</code></pre>
+
+<h4>时间</h4>
+<pre><code>myDate.getHours(); //获取当前小时数（取值0-23）
+myDate.getMinutes(); //获取当前分钟数（取值0-59）
+myDate.getSeconds(); //获取当前秒数（取值0-59）
+myDate.getMilliseconds(); //获取当前毫秒数（取值0-999）
+myDate.getTime(); //获取当前时间（从1970.01.01 00:00:00开始到现在的毫秒数）
+// getTime()函数获取的值 / 1000 =&gt; 取整！！！ =&gt; 当前时间戳
+</code></pre>
+
+<h4>时间戳</h4>
+<p>Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从格林威治时间1970年01月01日00时00分00秒起至现在的总秒数。</p>
+<p>因为世界各地表示时间的方式不一，时间戳可以帮助我们转换为想要的时间格式。</p>
+<p>后端数据库存储时间格式一般都为“时间戳”。</p>
+<pre><code>parseInt(myDate.getTime()/1000); //获取当前时间戳
+</code></pre>
+
+<h4>获取当前时区格式的日期或时间</h4>
+<pre><code>myDate.toLocaleDateString(); //获取当前日期字符串
+//10/26/2017
+myDate.toLocaleTimeString(); //获取当前时间字符串
+//10:55:55 AM
+myDate.toLocaleString(); //获取当前日期与时间字符串
+//10/26/2017, 10:57:39 AM
+</code></pre>
+
+<h4>固定时间戳 =&gt; 常规日期格式</h4>
+<ol>
+<li>从后端对象接收到一串时间戳ns。</li>
+<li>把时间戳转换为date对象<code>new Date(ns * 1000)</code></li>
+<li>利用以上的Date对象方法，通过拼接，输出想要的日期格式。</li>
+</ol>
+<hr />
+<pre><code>var time = 1508985745;
+
+function getLocalTime(ns) {
+    var myDate = new Date(ns * 1000);
+    return myDate.getFullYear() + '-' + (myDate.getMonth() + 1);
+}
+
+console.log(getLocalTime(time));
+</code></pre>
+
+<h3>2. Math对象，处理复杂的数学运算</h3>
+<blockquote>
+<p>Math对象是JavaScript的一个全局对象，不需要new创建。</p>
+</blockquote>
+<pre><code>Math.abs(-2); //返回一个数的绝对值（把符号去掉）
+// 2
+
+Math.round(2.5); //返回一个数舍入最接近的整数（四舍五入）
+// 3
+
+Math.ceil(2.0000001); //如有小数点，把小数去掉+1，若无，等于本身（向上取整）
+// 3
+
+Math.floor(2.0000001); //如有小数点，把小数去掉，若无，等于本身（向下取整）
+// 2
+
+Math.pow(2, 3); //返回x的y次幂(2的3次方)
+// 8
+
+Math.random(); //返回[0,1)的随机数
+
+Math.sqrt(4); //返回开根号的值
+// 2
+</code></pre>
+
+<h3>3. Array数组对象，专注于数组操作。</h3>
+<h4>定义数组的2种方式</h4>
+<pre><code>var arr = [1, '2', 3, 99]; //字面量写法
+var arr = new Array('星期一',2,'Wed.'); //原型实例化写法
+</code></pre>
+
+<h4>获取数组的长度</h4>
+<pre><code>arr.length
+</code></pre>
+
+<h4>获取数组下标所对应的值（下标从0开始）</h4>
+<pre><code>arr[0]
+</code></pre>
+
+<h4>小练习：用for循环输出星期一到星期天，但不输出今天的值。</h4>
+<pre><code>var week = ['天', '一', '二', '三', '四', '五', '六'];
+
+function dont() {
+    var day = new Date().getDay();
+    for (var i = 0, len = week.length; i &lt; len; i++) {
+        if (i == day) {
+            continue;
+        } else {
+            console.log('星期' + week[i]);
+        }
+    }
+}
+
+dont();
+</code></pre>
+
+<h4>数组元素添加</h4>
+<h4>push()</h4>
+<blockquote>
+<p>将一个或多个新元素添加到数组尾部，并返回新数组长度。</p>
+</blockquote>
+<pre><code>var arr = [1, 2, 3, 99];
+var tmp = arr.push('星期一', '星期二');
+console.log(arr, tmp); //[1, 2, 3, 99, '星期一', '星期二']  6 
+</code></pre>
+
+<h4>unshift()</h4>
+<blockquote>
+<p>将一个或多个新元素添加到数组开始，并返回新数组长度。</p>
+</blockquote>
+<pre><code>var arr = [1, 2, 3, 99];
+var tmp = arr.unshift('星期一', '星期二');
+console.log(arr, tmp); //[ '星期一', '星期二', 1, 2, 3, 99,]  6   
+</code></pre>
+
+<h4>数组元素删除</h4>
+<h4>pop()</h4>
+<blockquote>
+<p>移除最后一个元素并返回被删除的元素值</p>
+</blockquote>
+<pre><code>var del = ['aa',123,456,789,'bb'];
+var tmp = del.pop();
+console.log(del, tmp); //[&quot;aa&quot;, 123, 456, 789] &quot;bb&quot;
+</code></pre>
+
+<h4>shift()</h4>
+<blockquote>
+<p>移除第一个元素并返回被删除的元素值，数组的元素会自动前移。</p>
+</blockquote>
+<pre><code>var del = ['aa',123,456,789,'bb'];
+var tmp = del.shift();
+console.log(del, tmp); //[123, 456, 789, &quot;bb&quot;] &quot;aa&quot;
+</code></pre>
+
+<h4>splice(delPos, delCount)</h4>
+<blockquote>
+<p>移除从delPos开始位置的指定数量delCount的元素，返回被删除的元素，以数组形式表示。（delCount为1，返回只有一个元素的数组）</p>
+</blockquote>
+<pre><code>var del = ['aa',123,456,789,'bb'];
+var tmp = del.splice(1, 2);
+console.log(del, tmp); //[&quot;aa&quot;, 789, &quot;bb&quot;]  [123, 456]
+</code></pre>
+
+<blockquote>
+<p>例子1，不仅移除，还在delPos位置添加新元素</p>
+</blockquote>
+<pre><code>del.splice(1, 2, '星期三'); //[&quot;aa&quot;, &quot;星期三&quot;, 789, &quot;bb&quot;]  [123, 456]
+</code></pre>
+
+<blockquote>
+<p>例子2，在指定位置添加新元素</p>
+</blockquote>
+<pre><code>del.splice(1, 0, '星期三'); // [&quot;aa&quot;, &quot;星期三&quot;, 123, 456, 789, &quot;bb&quot;] []
+</code></pre>
+
+<h4>数组的截取与合并（不改变原数组）</h4>
+<h4>slice(start, end)</h4>
+<blockquote>
+<p>原数组保持不变，截取出数组[start, end)的部分。</p>
+</blockquote>
+<pre><code>var del = ['aa',123,456,789,'bb'];
+var tmp = del.slice(0, 2);
+console.log(del, tmp); // [&quot;aa&quot;, 123, 456, 789, &quot;bb&quot;]  [&quot;aa&quot;, 123]
+</code></pre>
+
+<h4>concat(ele1, ele2, ...), concat(Array)</h4>
+<blockquote>
+<p>原数组保持不变，合并数组，或添加一个或多个新元素到原数组尾部。返回合并后的数组。</p>
+</blockquote>
+<pre><code>var del = ['aa',123,456,789,'bb'];
+var tmp = del.concat(arr);
+console.log(del, tmp);
+// [&quot;aa&quot;, 123, 456, 789, &quot;bb&quot;] 
+// [&quot;aa&quot;, 123, 456, 789, &quot;bb&quot;, &quot;星期一&quot;, &quot;星期二&quot;, 1, 2, 3, 99]
+</code></pre>
+
+<h4>反面例子，克隆数组</h4>
+<pre><code>var del = ['aa',123,456,789,'bb'];
+var a = del; //a 只是del数组的另外一个名字
+del.shift();
+console.log(a); // [123, 456, 789, &quot;bb&quot;]
+</code></pre>
+
+<h4>正面例子！！！克隆数组</h4>
+<pre><code>var del = ['aa',123,456,789,'bb'];
+var a = [];
+a = a.concat(del);
+del.shift();
+console.log(a);
+</code></pre>
+
+<h4>数组排序</h4>
+<h4>reverse()</h4>
+<blockquote>
+<p>反转元素（最前的排到最后，最后的排到最前），返回反转后的数组。（原数组也会发生改变）	</p>
+</blockquote>
+<pre><code>var sort = ['aa', 22, 45, 4456, 23];
+console.log(sort); //[&quot;aa&quot;, 22, 45, 4456, 23]
+var res_sort = sort.reverse();
+console.log(res_sort); //[23, 4456, 45, 22, &quot;aa&quot;]
+</code></pre>
+
+<h4>sort()</h4>
+<blockquote>
+<p>按照字母顺序排序，或者按照数字大小排序。（原数组也会发生改变）</p>
+<p>中文字符也可排序，排序按照UTF-8编码表进行排序</p>
+</blockquote>
+<pre><code>var num_sort = [22, 44, 33, 66, 11, 55];
+var alpha_sort = ['bb', 'ba', 'a', 'z', 'x2'];
+console.log(num_sort.sort()); //[11, 22, 33, 44, 55, 66]
+console.log(alpha_sort.sort()); //[&quot;a&quot;, &quot;ba&quot;, &quot;bb&quot;, &quot;x2&quot;, &quot;z&quot;]
+</code></pre>
+
+<h4>数组&lt;=&gt;字符串</h4>
+<h4>数组转字符串，join(symbol)</h4>
+<blockquote>
+<p>返回字符串，这个字符串将数组的每一个元素连接在一起，中间用symbol隔开</p>
+</blockquote>
+<pre><code>var num_sort = [11, 22, 33, 44, 55, 66];
+console.log(num_sort.join('-')); // 11-22-33-44-55-66
+</code></pre>
+
+<h4>字符串转数组，split(symbol)</h4>
+<blockquote>
+<p>返回数组，以symbol为界限分隔字符串。</p>
+</blockquote>
+<pre><code>var str = &quot;22,33,44,55,66&quot;;
+console.log(str.split(',')); //[&quot;22&quot;, &quot;33&quot;, &quot;44&quot;, &quot;55&quot;, &quot;66&quot;]
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bootstrap</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>Bootstrap</h1>
+<h2>Viewport(视口)</h2>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,user-scalable=no&quot;&gt;
+</code></pre>
+
+<ol>
+<li>width: 视口宽度，可写死一个固定像素值，让网页等比例缩放。</li>
+<li>initial-scale: 初始的缩放比例，取值范围0-10，一般为1。</li>
+<li>user-scalable: 是否允许用户缩放网页。yes或者no。</li>
+</ol>
+<h2>布局技巧</h2>
+<ol>
+<li>先写大容器，用HTML5标签表示。</li>
+<li>选内容容器(container, container-fluid)(正常, 全屏)</li>
+<li>在容器内写栅格。</li>
+</ol>
+<h2>栅格系统</h2>
+<h3>规定任何屏幕下面都分12列，布局需要N列，即col-xx-(12/N)</h3>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;No.1&lt;/div&gt;
+    &lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;No.2&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<blockquote>
+<ol>
+<li>超小屏幕: col-xs-</li>
+<li>平板屏幕: col-sm-</li>
+<li>中等PC屏幕: col-md-</li>
+<li>超大PC屏幕: col-lg-</li>
+</ol>
+</blockquote>
+<h3>几个注意事项</h3>
+<ol>
+<li>栅格class要从小屏幕写起，若大屏幕与最接近的小屏幕效果一致，可忽略。</li>
+<li>若栅格本身就占12列，那不建议使用栅格系统，直接width:100%即可。</li>
+<li>若栅格属于同一栏目，只要下一行足够高，不必另起row。</li>
+<li>如果意识到一行内有个别列会高于其他列，记得在行末尾加上一个div.clearfix，这个.clearfix不能有高度或背景样式。</li>
+</ol>
+<h3>断点：768px 992px 1200px</h3>
+<h3>列偏移</h3>
+<pre><code>col-xs-offset-
+</code></pre>
+
+<blockquote>
+<ol>
+<li>偏移值会算在列数内。</li>
+<li>只给要偏移的栅格加class即可。</li>
+<li>居中:  偏移（12-栅格列数）/2</li>
+</ol>
+</blockquote>
+<h3>列嵌套</h3>
+<blockquote>
+<p>在一个栅格里嵌套一列，把这个栅格分成12列。</p>
+</blockquote>
+<pre><code>&lt;div class=&quot;col-xs-12 col-sm-6&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-xs-2&quot;&gt;Ha.1&lt;/div&gt;
+        &lt;div class=&quot;col-xs-2&quot;&gt;Ha.2&lt;/div&gt;
+        &lt;div class=&quot;col-xs-2&quot;&gt;Ha.3&lt;/div&gt;
+        &lt;div class=&quot;col-xs-2&quot;&gt;Ha.4&lt;/div&gt;
+        &lt;div class=&quot;col-xs-2&quot;&gt;Ha.5&lt;/div&gt;
+        &lt;div class=&quot;col-xs-2&quot;&gt;Ha.6&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2>UI组件</h2>
+<h3>Glyphicon Icons组件</h3>
+<blockquote>
+<p>此UI 组件是用字体实现的，可以无限放大。 <br />
+改变颜色用color，改变大小用font-size </p>
+</blockquote>
+<pre><code>&lt;i class=&quot;glyphicon glyphicon-XXX&quot;&gt;
+</code></pre>
+
+<p>search 放大镜、star 实心五角星、star-empty 空心五角星、ok 钩、remove 交叉...</p>
+<h3>Button(按钮)组件</h3>
+<pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-XXX&quot;&gt;&lt;/button&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-XXX&quot;&gt;&lt;/a&gt;
+</code></pre>
+
+<ol>
+<li>default 白色</li>
+<li>primary 蓝色</li>
+<li>info 浅蓝色</li>
+<li>success 绿色</li>
+<li>warning 橙黄色</li>
+<li>danger 红色</li>
+</ol>
+<blockquote>
+<p>若有需要可以加上<code>.btn-lg</code>让按钮变得更大。</p>
+</blockquote>
+<h3>导航条</h3>
+<ol>
+<li>nav.navbar.navbar-XXX(default, inverse)</li>
+<li>选container</li>
+</ol>
+<h4>商标部分（不隐藏或收缩部分）</h4>
+<blockquote>
+<p>此版本含伸缩按钮(data-target属性要与收缩容器的id一致)</p>
+</blockquote>
+<pre><code>&lt;div class=&quot;navbar-header&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#navigation&quot;&gt;
+        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;a href=&quot;index.html&quot; class=&quot;navbar-brand&quot;&gt;
+        &lt;img src=&quot;images/logo.png&quot;&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h4>链接部分（需隐藏或收缩的部分）</h4>
+<ol>
+<li>先写一个div.collapse.navbar-collapse，负责包裹整个要收缩的容器，给其定一个id。</li>
+<li>主要链接部分写在一个ul.nav.navbar-nav内。（链接激活状态是给li标签加.active）</li>
+<li>如有需要，可以添加导航栏表单组件，下拉菜单组件。切记加上.navbar-left或者.navbar-right</li>
+</ol>
+<hr />
+<pre><code>&lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navigation&quot;&gt;
+    &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+        &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Laya家族&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;游戏&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;新闻动态&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;开发者中心&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;开发者社区&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;开放平台&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;关于我们&lt;/a&gt;&lt;/li&gt; 
+    &lt;/ul&gt;
+    &lt;!-- 导航栏表单组件 --&gt;
+    &lt;form class=&quot;navbar-form navbar-left&quot;&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;input type=&quot;text&quot; name=&quot;kwds&quot; id=&quot;search&quot; class=&quot;form-control&quot; placeholder=&quot;Search...&quot;&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;submit&quot;&gt;
+            &lt;i class=&quot;glyphicon glyphicon-star&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;   
+    &lt;/form&gt;
+    &lt;!-- 导航栏下拉菜单组件 --&gt;
+    &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+        &lt;li class=&quot;dropdown&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Language &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;&quot;&gt;简体中文&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;&quot;&gt;English&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;  
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RegExp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>正则表达式(Regular Expression)</h1>
+<p>作用：匹配一系列的符合某个规则的字符串。</p>
+<p>所谓的“某个规则”就是正则表达式。</p>
+<h2>RegExper</h2>
+<blockquote>
+<p>把正则表达式作为流程图输出，辅助学习。</p>
+</blockquote>
+<h2>JavaScript里的正则定义方法：</h2>
+<h3>字面量定义：</h3>
+<pre><code>var reg = /\bis\b/gi;
+</code></pre>
+
+<h3>构造函数定义：</h3>
+<pre><code>var reg = new RegExp('\\bis\\b', 'gi');
+</code></pre>
+
+<p>参数1代表正则俩斜线内的字符（不包括俩斜线） <br />
+参数2代表修饰符</p>
+<blockquote>
+<p>构造函数：实例化对象时执行的函数。一旦new就会调用，无需任何操作。</p>
+<p>转义： 反斜杠 <br />
+在一些有特殊含义的符号前加\,让其变成真正的字符串。</p>
+</blockquote>
+<pre><code>var c = 'haha:\'gg!\''; 
+console.log(c);
+</code></pre>
+
+<h2>修饰符</h2>
+<blockquote>
+<p>正则表达式的规则</p>
+</blockquote>
+<hr />
+<pre><code>g   global      全局搜索（匹配）
+i   ignore case 忽略大小写
+m   multilines  多行搜索
+</code></pre>
+
+<h2>元字符</h2>
+<blockquote>
+<p>正则表达式中含有特殊含义的非字母字符。</p>
+<p>通常正则表达式含两部分： <br />
+1. 原义文本字符。
+2. 元字符。</p>
+</blockquote>
+<h3>元字符：* + ? $ ^ .  |  \  () [] {}</h3>
+<h3>转义字符：（作为一个普通文本字符处理）</h3>
+<pre><code>\t  水平制表符
+\v  垂直制表符
+\r  回车符
+\n  换行符
+\0  空字符
+\f  换页符
+\cX 与X对应的控制字符（Ctrl + X）
+</code></pre>
+
+<h2>字符类</h2>
+<blockquote>
+<p>构建一个字符类，提取中括号内其中一个字符。</p>
+</blockquote>
+<pre><code>var reg = /[abc]/g;
+</code></pre>
+
+<h3>字符类取反</h3>
+<pre><code>var reg = /[^abc]/g; //匹配a|b|c以外的字符
+</code></pre>
+
+<h3>范围类</h3>
+<blockquote>
+<p>表示一个范围(如：a-z ，A-Z , 0-9)，可以连写，但都只会匹配一个字符。</p>
+</blockquote>
+<hr />
+<pre><code>var reg2 = /[a-zA-Z0-9]/g; 
+</code></pre>
+
+<p>如果要匹配 - ，可以在范围后加 \-</p>
+<pre><code>var str3 = '2017-08-21',
+    reg3 = /[0-9\-]/g;
+console.log(str3.replace(reg3, 'X'));
+//XXXXXXXXXX
+</code></pre>
+
+<h3>预定义类</h3>
+<pre><code>.   [^\r\n]         除回车换行符以外的所有字符(不能用于[]里)
+\d  [0-9]           数字字符
+\D  [^0-9]          非数字字符
+\s  [\t\n\x0B\f\r]  空白符
+\S  [^\t\n\x0B\f\r] 非空白符
+\w  [a-zA-Z_0-9]    单词字符（字母、数字、下划线）
+\W  [^a-zA-Z_0-9]   非单词字符
+</code></pre>
+
+<h4>d=&gt;digit, s=&gt;space, w=&gt;word</h4>
+<h2>边界</h2>
+<pre><code>\b  单词边界
+\B  非单词边界
+^   起始符
+$   结束符
+
+var str5 = '@123@abc@',
+    reg5 = /^@./g, //Z23@abc@
+    reg6 = /.@$/g; //@123@abZ
+console.log(str5.replace(reg6, 'Z'));
+</code></pre>
+
+<p>^ 起始符要写在匹配对象前面（整个字符串的开头） <br />
+$ 结束符要写在匹配对象后面（整个字符串的结束）</p>
+<h3>多行搜索（匹配）</h3>
+<blockquote>
+<p>修饰符加上m表示多行搜索，换行符\n会作为起始符匹配后面的字符。</p>
+</blockquote>
+<hr />
+<pre><code>var str7 = '@123\n@456\n@789',
+    reg8 = /^@./gm;
+console.log(str7.replace(reg8, 'X'));
+</code></pre>
+
+<h2>量词</h2>
+<blockquote>
+<p>表示某一字符匹配的次数</p>
+</blockquote>
+<h4>{n}规定出现n次(=n)</h4>
+<pre><code>var mobile = '13800a138000',
+    reg = /\d{11}/g;
+console.log(mobile.replace(reg, 'Q'));
+</code></pre>
+
+<h4>{n,}规定至少出现n次(&gt;=n)</h4>
+<blockquote>
+<p>默认会尽可能多地匹配字符（贪婪模式）</p>
+</blockquote>
+<hr />
+<pre><code>var mobile = '138001380007',
+    reg = /\d{11,}/g;
+console.log(mobile.replace(reg, 'Q'));
+</code></pre>
+
+<h4>{n, m}规定至少出现n次，但不能多于m次(&gt;=n &amp;&amp; &lt;=m)</h4>
+<blockquote>
+<p>此模式下也会被贪婪模式支配。</p>
+</blockquote>
+<hr />
+<pre><code>var mobile = '13800138000789',
+    reg = /\d{11,13}/g;
+console.log(mobile.replace(reg, 'Q'));
+</code></pre>
+
+<h4>?（出现0次或1次）（最多出现1次）</h4>
+<blockquote>
+<p>符合要求的字符会在其后多匹配一次，整条字符串有且仅会匹配多一次。</p>
+</blockquote>
+<hr />
+<pre><code>var mobile = '1',
+    reg = /\d?/g;
+console.log(mobile.replace(reg, 'Q')); //QQ
+
+var mobile = '13888138888',
+    reg = /\d{1,9}/g;
+console.log(mobile.replace(reg, 'Q')); //QQ
+</code></pre>
+
+<h4>+（出现1次或者多次）（至少出现1次）</h4>
+<pre><code>var mobile = '13800A138000',
+    reg = /\d+/g;
+console.log(mobile.replace(reg, 'Q')); //Q
+</code></pre>
+
+<h4>*（出现0次或多次）（任意次）</h4>
+<blockquote>
+<h3>? 与 + 量词的结合。</h3>
+</blockquote>
+<h3>贪婪模式</h3>
+<blockquote>
+<p>默认的正则表达式匹配是尽可能多的，默认开启贪婪模式。</p>
+</blockquote>
+<hr />
+<pre><code>var num = '12345678',
+    reg2 = /\d{3,6}/g;
+console.log(num.replace(reg2, 'Q')); //Q78
+</code></pre>
+
+<h3>非贪婪模式</h3>
+<blockquote>
+<p>匹配成功即停止，在量词后加?</p>
+</blockquote>
+<hr />
+<pre><code>var num = '12345678',
+    reg2 = /\d{3,6}?/g;
+console.log(num.replace(reg2, 'Q')); //QQ78
+</code></pre>
+
+<h2>分组</h2>
+<blockquote>
+<p>匹配出现多次的单词（或一系列字符）。</p>
+</blockquote>
+<hr />
+<pre><code>var str = 'ByronByronByronCaspter',
+    str2 = 'a1b2c3d4e5',
+    reg3 = /(Byron){3}/g,
+    reg4 = /([a-z]\d){3}/g;
+console.log(str2.replace(reg4, 'Q')); //Qd4e5
+</code></pre>
+
+<blockquote>
+<p>注意事项： /Byron{3}/g = Byro + n*3</p>
+</blockquote>
+<h3>或( | )</h3>
+<pre><code>var str3 = 'Byronspter ByrCaspter',
+    reg5 = /Byr(on|Ca)spter/g;
+console.log(str3.replace(reg5, 'Q')); //Q Q 
+</code></pre>
+
+<h3>反向引用（分组捕获）$1, $2, $3 ... $n</h3>
+<blockquote>
+<p>在分组上加n（索引值）（从1开始），替换目标时用$n（索引值）表示。</p>
+</blockquote>
+<h3>忽略分组( 在分组内起始位置加 ?:  )</h3>
+<blockquote>
+<p>参与匹配但不参与分组捕获操作。</p>
+</blockquote>
+<hr />
+<pre><code>var date = 'Mon: 2017-08-21', // 08/21/2017
+    reg6 = /(?:\w{3}): (\d{3,4})-(\d{2})-(\d{2})/g;
+
+console.log(date.replace(reg6, '$2/$3/$1'));
+</code></pre>
+
+<h2>前瞻、后顾（JS不支持后顾）</h2>
+<blockquote>
+<p>匹配到规则后，向前检查是否符合断言。 <br />
+正则表达式从文本头部向尾部解析，所以文本尾部称为“前“。</p>
+</blockquote>
+<pre><code>exp(?=assert)   正向前瞻
+exp(?!assert)   负向前瞻
+</code></pre>
+
+<h4>断言部分不参与匹配。</h4>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

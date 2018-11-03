@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Extend</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>延伸</h1>
+<h2>HTML</h2>
+<h3>标签嵌套</h3>
+<blockquote>
+<p>如需结合两标签的功能，可以使用标签嵌套。</p>
+</blockquote>
+<pre><code>&lt;a href=&quot;http://baidu.com&quot;&gt;
+    &lt;h1&gt;百度两下&lt;/h1&gt;
+&lt;/a&gt;
+</code></pre>
+
+<h3>index.html</h3>
+<blockquote>
+<p>任何域名后，只要不接.html后缀的文件，默认加载index.html。</p>
+</blockquote>
+<h3>关于相对目录</h3>
+<blockquote>
+<p>一般来说，图片及其他静态资源不会与html文件散落地放在一起，资源会分文件夹放好。但放进文件夹后，目录会有所改变，因此需用到“相对目录”。</p>
+<p>当前目录文件夹：直接写文件夹名字 + /</p>
+</blockquote>
+<pre><code>&lt;img src=&quot;img/study.png&quot;&gt;
+&lt;img src=&quot;img/first/study.png&quot;&gt;
+</code></pre>
+
+<blockquote>
+<p>上一层目录：../</p>
+</blockquote>
+<pre><code>&lt;img src=&quot;../study.png&quot;&gt;
+</code></pre>
+
+<h3>EMMET语法</h3>
+<ol>
+<li>tr &gt; td{$} 					内容语法，$表示循环的计数</li>
+<li>dl &gt; (dt + dd) 				并列语法，+表示两个元素并列</li>
+<li>tr &gt; td[bgcolor=black]		属性语法，[]表示该元素的属性 </li>
+</ol>
+<h3>国际象棋棋盘（table + EMMET）</h3>
+<pre><code>&lt;table width=&quot;400&quot; height=&quot;400&quot; cellspacing=&quot;0&quot;&gt;
+    ((tr&gt;(td[bgcolor=black]+td[bgcolor=white])*4)+(tr&gt;(td[bgcolor=white]+td[bgcolor=black])*4))*4
+&lt;/table&gt;
+</code></pre>
+
+<h3>input类型拓展（HTML5）</h3>
+<pre><code>&lt;input type=&quot;color&quot; name=&quot;theme&quot;&gt;
+&lt;!-- 拾色器 --&gt;
+&lt;input type=&quot;email&quot; required&gt;
+&lt;!-- 邮箱地址 --&gt;
+&lt;input type=&quot;search&quot;&gt;
+&lt;!-- 搜索框，输入文字后，会在其后有清除的X --&gt;
+</code></pre>
+
+<h3>图文标题（figure&gt;img + figcaption）</h3>
+<blockquote>
+<p>HTML5 新标签，规定figure包含着img与figcaption，img是图片，figcaption是文字。</p>
+</blockquote>
+<pre><code>&lt;figure&gt;
+    &lt;img src=&quot;...&quot;&gt;
+    &lt;figcaption&gt;Faker&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+
+<h3>写一个简单的菜单（:hover）</h3>
+<p>html代码：<br></p>
+<pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;NO.1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;NO.2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;NO.3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;NO.4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;NO.5&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!-- ul&gt;(li&gt;a{NO.$})*5 --&gt;
+&lt;/nav&gt;
+</code></pre>
+
+<p>css代码：<br></p>
+<pre><code>nav a {
+    background-color: aqua;
+    display: block;
+}
+
+nav a:hover {
+    color: #fff;
+    background-color: lightgreen;
+}
+</code></pre>
+
+<blockquote>
+<p>说明：一般菜单的hover效果需要占满一行，并且能够在空白位置点击。所以应该给a加hover效果，先保证功能，然后让a变成块级元素（display: block;）</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>除此以外，hover还可以这样玩：</p>
+</blockquote>
+<pre><code>nav li:hover a {
+    /* 当鼠标悬停在li上，li里面的a状态 */
+    color: #fff;
+}
+</code></pre>
+
+<h3>千层糕样式（:nth-child(n)）</h3>
+<p>html代码：</p>
+<pre><code>&lt;ul class=&quot;dim&quot;&gt;
+        &lt;li&gt;NO.1&lt;/li&gt;
+        &lt;li&gt;NO.2&lt;/li&gt;
+        &lt;li&gt;NO.3&lt;/li&gt;
+        ......此处省略45个
+        &lt;li&gt;NO.49&lt;/li&gt;
+        &lt;li&gt;NO.50&lt;/li&gt;
+    &lt;/ul&gt;
+</code></pre>
+
+<p>css代码：<br></p>
+<p>奇数行：（odd）</p>
+<pre><code>.dim :nth-child(odd) {
+    background-color: #ccc;
+}
+</code></pre>
+
+<p>偶数行：（even）</p>
+<pre><code>.dim :nth-child(even) {
+    background-color: #ccc;
+}
+</code></pre>
+
+<p>拓展：有些客户，喜欢隔2行、隔3行……处理这种情况，可以填通项公式。</p>
+<blockquote>
+<p>隔y行，通项公式就是：(y+1)n+1</p>
+</blockquote>
+<h3>中英文字体混合（font-family）</h3>
+<blockquote>
+<p>先写英文字体，再写中文字体，即可实现中英文字体混合。</p>
+</blockquote>
+<pre><code>* {
+    margin: 0;
+    padding: 0;
+    font-family: 'IMPACT', 'Heiti SC';
+    /* 英文字体使用IMPACT渲染，中文使用heiti SC */
+}
+</code></pre>
+
+<h3>CSS画六角形（border）</h3>
+<pre><code> .up6 {
+    width: 60px;
+    border: 30px transparent solid;
+    border-bottom: 50px #333 solid;
+}
+
+.down6 {
+    width: 60px;
+    border: 30px transparent solid;
+    border-top: 50px #333 solid;
+}
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

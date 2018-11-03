@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>jQuery框架</h1>
+<h2>基础语法</h2>
+<pre><code>$, jQuery //本质上都是一个函数
+</code></pre>
+
+<blockquote>
+<p>因为不排除$在其他插件中使用同名变量，为确保$是jQuery的，可在jq代码外加闭包。</p>
+</blockquote>
+<hr />
+<pre><code>(function($){
+    //TODO
+})(jQuery);
+</code></pre>
+
+<h3>选择器</h3>
+<blockquote>
+<p>与CSS3选择器一致，作为参数传入$ / jQuery 函数内。</p>
+</blockquote>
+<hr />
+<pre><code>//html:
+&lt;button data-src=&quot;ert&quot;&gt;Click Me!&lt;/button&gt;
+&lt;button&gt;Haha!&lt;/button&gt;
+
+//js:
+var btn = $('button[data-src*=e]');
+console.log(btn); //输出第一个button
+</code></pre>
+
+<h4>注意事项：</h4>
+<blockquote>
+<p>通过$ / jQuery 选择的DOM，返回的是JQ对象，不可以直接在其后用原生JS语法。</p>
+</blockquote>
+<hr />
+<pre><code>//JQ对象 -&gt; 原生JS节点
+$('button[data-src*=e]')[0]; //在$函数后加[0]
+</code></pre>
+
+<blockquote>
+<p>同样，原生JS节点不可使用JQ语法，必须转换JQ对象方可使用。</p>
+</blockquote>
+<hr />
+<pre><code>//原生JS节点 -&gt; JQ对象
+$(node); //$函数包裹节点对象即可
+</code></pre>
+
+<blockquote>
+<p>每次用JQ选择器，建议用变量接收，后续用该变量操作。</p>
+</blockquote>
+<h4>链式调用</h4>
+<pre><code>//每个JQ对象都支持链式调用，如：
+$('selector').css(...).html(...).click(...)  ......
+</code></pre>
+
+<h2>CSS操作</h2>
+<h3>获取操作</h3>
+<pre><code>$('selector').css('attrName'); //建议使用分支属性
+</code></pre>
+
+<h3>设置操作</h3>
+<pre><code>$('selector').css('attrName', 'attrValue'); 
+</code></pre>
+
+<blockquote>
+<p>只要是jQ对象，无论选择器有多少，都可一次性设置css样式。</p>
+</blockquote>
+<h4>一次性设置CSS</h4>
+<pre><code>$(this).css({
+    width: '200px', //传字符串或数值都可以
+    height: 80,
+    backgroundColor: 'lightblue'
+});
+</code></pre>
+
+<h3>Class操作(addClass, removeClass, toggleClass)</h3>
+<blockquote>
+<p>addClass('className') 添加Class <br />
+removeClass('className') 移除Class <br />
+toggleClass('className') 添加 / 移除Class</p>
+</blockquote>
+<h2>事件绑定</h2>
+<h4>鼠标事件</h4>
+<blockquote>
+<p>单击事件(click)</p>
+</blockquote>
+<hr />
+<pre><code>//一个div逐渐变大
+para.click(scaleBig);
+
+function scaleBig(){
+    $(this).css({
+        width: function(i,v){
+            return parseFloat(v) * 1.2;
+        },
+        height: function(i,v){
+            return parseFloat(v) * 1.2;
+        },
+        backgroundColor: 'lightblue'
+    });
+}
+</code></pre>
+
+<blockquote>
+<p>双击事件(dblclick)</p>
+</blockquote>
+<hr />
+<pre><code>$('selector').dblclick(function(){
+    //TODO
+});
+</code></pre>
+
+<blockquote>
+<p>鼠标移入事件(mouseenter)</p>
+</blockquote>
+<hr />
+<pre><code>$('selector').mouseenter(function(){
+    $(this).css('background-color', 'lightsalmon');
+});
+</code></pre>
+
+<blockquote>
+<p>鼠标移出事件(mouseleave)</p>
+</blockquote>
+<hr />
+<pre><code>$('selector').mouseleave(function(){
+    $(this).css('background-color', 'lightsalmon');
+});
+</code></pre>
+
+<blockquote>
+<p>鼠标经过事件(mouseover)</p>
+</blockquote>
+<hr />
+<pre><code>$('selector').mouseover(function(){
+    $(this).css('background-color', 'lightsalmon');
+});
+</code></pre>
+
+<h4>表单事件</h4>
+<blockquote>
+<p>获取焦点事件(focus)</p>
+</blockquote>
+<hr />
+<pre><code>$('selector').focus(function(){
+    //TODO
+});
+</code></pre>
+
+<blockquote>
+<p>失去焦点事件(blur)</p>
+</blockquote>
+<hr />
+<pre><code>$('selector').blur(function(){
+    //TODO
+});
+</code></pre>
+
+<h4>键盘事件</h4>
+<blockquote>
+<p>按下事件，不论摁什么键(keydown)</p>
+</blockquote>
+<hr />
+<pre><code>//回车提交表单：
+var pwd = $('#password'),
+    form = $('form');
+pwd.on('keydown', function(event){
+    $(this).css('background', 'red');
+    if(event.keyCode == 13){
+    //Enter 13, Space 32, Esc 27
+        form.submit();
+    }
+})
+</code></pre>
+
+<h3>绑定 / 解绑方法（on/off）</h3>
+<pre><code>$('selector').on('XX', function(){
+    //绑定事件
+});
+$('selector').off(); //全部绑定过的事件都移除
+$('selector').off('XX'); //移除特定的XX事件
+</code></pre>
+
+<blockquote>
+<p>单次聚焦有效，移出后无效：</p>
+</blockquote>
+<hr />
+<pre><code>input.on('focus', function(){
+    alert('haha!');
+}).on('blur', function(){
+    console.log('Blur!!!!!');
+    inputSpan.css('display', 'inline');
+    $(this).off();
+})
+</code></pre>
+
+<h3>事件冒泡</h3>
+<blockquote>
+<p>有时候难免前辈元素有点击事件，元素本身又要添加相同的事件类型，这样会触发2种事件，这时给元素本身加事件冒泡，使其触发事件时与前辈元素事件分离。</p>
+</blockquote>
+<hr />
+<pre><code>$('body').click(function(){
+    console.log('bodyHandler!!');
+});
+
+$('h1').click(function(event){
+    event.stopPropagation();
+    console.log('H1handler!!');
+});
+</code></pre>
+
+<h2>jQuery动画</h2>
+<h3>基础隐藏显示（关于宽高、透明度的过渡效果）</h3>
+<blockquote>
+<p>show, hide ,toggle函数可传参（过渡时间），也可不传参数（无过渡效果）</p>
+</blockquote>
+<hr />
+<pre><code>var h1 = $('h1'),
+    btns = $('button'),
+    btnShow = btns.eq(0),
+    btnHide = btns.eq(1);
+
+btnShow.click(function(){
+    // var flag = $(this).attr('data-flag');
+    // if(flag == 'hide'){
+    //  h1.show(1000);
+    //  $(this).attr('data-flag', 'show');
+    // } else {
+    //  h1.hide(1000);
+    //  $(this).attr('data-flag', 'hide');
+    // }
+    h1.toggle(1000);
+});
+</code></pre>
+
+<h3>slide隐藏显示（关于高的过渡效果）</h3>
+<blockquote>
+<p>用法可参考上面代码。</p>
+</blockquote>
+<pre><code>slideDown   显示
+slideUp     隐藏
+slideToggle 显示 / 隐藏
+</code></pre>
+
+<h3>fade隐藏显示（关于透明度的过渡效果）</h3>
+<blockquote>
+<p>用法可参考上面代码。</p>
+</blockquote>
+<pre><code>fadeIn      显示
+fadeOut     隐藏
+fadeToggle  显示 / 隐藏
+</code></pre>
+
+<h3>animate(Object, interval, f(n))（自定义动画）</h3>
+<h4>使用方法：</h4>
+<ol>
+<li>先给执行动画的对象添加默认css属性。（常见：position:relative;）</li>
+<li>在Object内写上动画执行完毕的css样式。（一些临界值明显的属性可用'toggle'表示，如:height,width, opacity）</li>
+<li>添加interval过渡时间。</li>
+<li>若有需要，添加回调函数f(n)，在动画执行完毕后调用。</li>
+</ol>
+<hr />
+<pre><code>var pwd = $('#password'),
+    form = $('form');
+pwd.on('keydown', function(event){
+    if(event.keyCode == 13){
+        h1.animate({
+            left: 400,
+            width: 'toggle'
+        }, 'normal', function(){
+            form.submit();
+        });
+
+    }
+})
+</code></pre>
+
+<h4>stop() 停止动画</h4>
+<blockquote>
+<p>直接在执行动画的对象调用<code>.stop()</code> ，可终止动画效果。</p>
+</blockquote>
+<h4>delay(interval) 延时动画</h4>
+<blockquote>
+<p>在动画之前或两个动画之间加<code>.delay(interval)</code> ，可等待一段时间再执行动画。</p>
+<p>注意事项：
+delay()函数后面不一定要接动画类函数。</p>
+</blockquote>
+<h2>捕获、设置</h2>
+<h3>DOM节点文本内容</h3>
+<h3>text()</h3>
+<pre><code>h1.text(); //获取对象内的文本内容
+h1.text('Haha! Oops!'); //设置文本内容
+</code></pre>
+
+<h3>html()</h3>
+<pre><code>h1.html(); //获取对象内的文本内容，跟text()效果一致
+h1.html('1234567!'); //设置文本内容，跟text(str)效果一致
+h1.html($(node)); //添加JQ节点到指定对象中
+</code></pre>
+
+<h3>val()</h3>
+<blockquote>
+<p>获取表单input的value属性值</p>
+</blockquote>
+<hr />
+<pre><code>pwd.keydown(function(e){
+    if(e.keyCode == 13){
+        console.log(usr.val());
+        console.log(pwd.val());
+    }
+})
+</code></pre>
+
+<h3>DOM节点属性内容</h3>
+<h3>attr(attrName)</h3>
+<pre><code>//获取h1对象的data-src属性
+h1.attr('data-src');
+//设置h1对象的data-src属性值为'images/2.jpg'
+h1.attr('data-src', 'images/2.jpg');
+</code></pre>
+
+<blockquote>
+<p>注意事项： attr()设置的属性在DOM节点里可有可无。</p>
+</blockquote>
+<h3>removeAttr(attrName)</h3>
+<blockquote>
+<p>删除对应的属性名</p>
+</blockquote>
+<h3>prop(attrName), removeProp(attrName)</h3>
+<blockquote>
+<p>用法与attr一致，但着重点在表单属性上，如autofocus, checked。</p>
+</blockquote>
+<hr />
+<pre><code>var usr = $('#username'),
+    music = $('#music');
+music.prop('checked'); //true
+music.attr('checked'); //checked
+music.removeProp('checked');
+</code></pre>
+
+<h3>DOM节点操作</h3>
+<h4>创建新jQ节点（$('&lt;XX&gt;')）</h4>
+<blockquote>
+<p>新建一个.test, 文本内容为&quot;Click Me!&quot;, 绑定click事件的div。</p>
+</blockquote>
+<hr />
+<pre><code>var aaa = $('&lt;div&gt;', {
+    'class': 'test',
+    text: 'Click Me!',
+    click: function(){
+        $(this).toggleClass('bgGreen');
+    }
+});
+</code></pre>
+
+<h4>克隆节点（clone(boolean)）</h4>
+<blockquote>
+<p>默认false, 代表原有节点绑定的事件不会被复制。true即被复制。</p>
+</blockquote>
+<hr />
+<pre><code>h2.clone().appendTo($(document.body));
+</code></pre>
+
+<h4>添加（before, after, prepend, append）</h4>
+<blockquote>
+<p>before, after</p>
+</blockquote>
+<hr />
+<pre><code>var h2 = $('h2');
+h2.before(a); //在h2同级的前面添加a
+h2.after(a); //在h2同级的后面添加a
+</code></pre>
+
+<blockquote>
+<p>prepend, append</p>
+</blockquote>
+<hr />
+<pre><code>var h2 = $('h2');
+h2.prepend(a); //在h2子辈里第一个添加a
+h2.append(a); //在h2子辈里最后追加a
+</code></pre>
+
+<blockquote>
+<p>prependTo, appendTo</p>
+</blockquote>
+<hr />
+<pre><code>var h2 = $('h2');
+a.prependTo(h2); //把a添加到h2第一个子辈之前
+a.appendTo(h2); //把a追加到h2里面
+</code></pre>
+
+<h4>删除（empty, remove）</h4>
+<blockquote>
+<p>empty（除本身，节点内所有内容清空）</p>
+</blockquote>
+<hr />
+<pre><code>h2.empty();
+</code></pre>
+
+<blockquote>
+<p>remove （把当前整个对象从DOM树里移除）</p>
+</blockquote>
+<hr />
+<pre><code>h2.remove();
+</code></pre>
+
+<h2>遍历</h2>
+<pre><code>//html
+&lt;div id=&quot;div1&quot;&gt;
+    &lt;div id=&quot;div2&quot;&gt;
+        &lt;h2&gt;
+            &lt;p&gt;123&lt;/p&gt;
+        &lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>向下遍历(children, find)</h3>
+<blockquote>
+<p>children(), children('filter') 遍历子辈</p>
+</blockquote>
+<hr />
+<pre><code>var div1 = $('#div1');
+console.log(div1.children()); //[div#div2]，实际情况不止一个，是全部子辈
+console.log(div1.children('div')); //[div#div2]
+console.log(div1.children('h2')); //[]
+</code></pre>
+
+<blockquote>
+<p>find('filter') 一直往子辈方向遍历，空为止。</p>
+</blockquote>
+<hr />
+<pre><code>console.log(div1.find('h2')); //[h2]
+</code></pre>
+
+<h3>向上遍历(parent, parents, parentsUntil)</h3>
+<blockquote>
+<p>parent() 返回父节点</p>
+</blockquote>
+<hr />
+<pre><code>para.parent(); //[h2]
+</code></pre>
+
+<blockquote>
+<p>parents(), parents('filter') 一直往父辈方向遍历，直到html</p>
+</blockquote>
+<hr />
+<pre><code>para.parents(); //[h2, div#div1, div#div2, body, html]
+para.parents('div'); //[div#div1, div#div2]
+</code></pre>
+
+<blockquote>
+<p>parentsUntil('selector') 当前节点往父辈方向遍历，到selector节点为止，返回对象不包括selector本身。（开区间）</p>
+</blockquote>
+<hr />
+<pre><code>para.parentsUntil('#div2').css('border', '3px solid chocolate');
+</code></pre>
+
+<h3>同级遍历(siblings,  next, nextAll, nextUntil, prev, prevAll, prevUntil)</h3>
+<blockquote>
+<p>siblings(), siblings('filter') 获取所有同级节点</p>
+</blockquote>
+<hr />
+<pre><code>//html
+&lt;div class=&quot;banner&quot;&gt;
+    &lt;button&gt;Btn1&lt;/button&gt;
+    &lt;span&gt;123&lt;/span&gt;
+    &lt;button&gt;Btn2&lt;/button&gt;
+    &lt;span&gt;123&lt;/span&gt;
+    &lt;button&gt;Btn3&lt;/button&gt;
+&lt;/div&gt;
+
+//js
+var $btns = $('.banner button'); 
+
+$btns.first().addClass('bgGreen');
+
+$btns.on('click', function(){
+    $(this).addClass('bgGreen').siblings('button').removeClass('bgGreen');
+});
+</code></pre>
+
+<blockquote>
+<p>next(), nextAll(), nextAll('filter'), nextUntil('selector')</p>
+</blockquote>
+<pre><code>next                下一个节点
+nextAll             所有往下遍历的兄弟节点
+nextUntil('selector')   所有往下遍历，直到selector为止的所有兄弟节点
+</code></pre>
+
+<hr />
+<pre><code>var test = $para.first().nextUntil('#twelve');
+console.log(test);
+</code></pre>
+
+<blockquote>
+<p>prev(), prevAll(), prevAll('filter'), prevUntil('selector') <br />
+用法同上，只是prev是向上遍历。</p>
+</blockquote>
+<h3>筛选器（filter, not, eq, first, last）</h3>
+<blockquote>
+<p>filter('selector') 在一堆jQ对象里过滤出符合selector类型的节点。</p>
+</blockquote>
+<hr />
+<pre><code>var test = $para.first();
+console.log(test.parents().filter('#div2'));
+console.log(test.parents('#div2')); //执行结果相同
+</code></pre>
+
+<blockquote>
+<p>not('selector') 过滤出符合selector以外的节点。</p>
+</blockquote>
+<hr />
+<pre><code>console.log(test.parents().not('#div2'));
+</code></pre>
+
+<blockquote>
+<p>eq(index) 返回jQ对象数组下标为index的节点。</p>
+</blockquote>
+<hr />
+<pre><code>console.log(test.parents().eq(1));
+</code></pre>
+
+<blockquote>
+<p>first(), last() 第一个子节点, 最后一个子节点。</p>
+</blockquote>
+<hr />
+<pre><code>console.log(test.first()); //第一个子节点
+console.log(test.last()); //最后一个子节点
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

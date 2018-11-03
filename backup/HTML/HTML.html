@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<link rel="stylesheet" type="text/css" href="../assets/markdown.css">
+</head>
+<body class="markdown-body">
+<h1>HTML</h1>
+<h2>简介</h2>
+<h3>HyperText Markup Language （超文本标记语言）</h3>
+<h3>新特性</h3>
+<ol>
+<li>拖放功能</li>
+<li>离线存储（localStorage）</li>
+<li>多媒体功能实现（video, audio, canvas）</li>
+</ol>
+<h3>Audio栗子</h3>
+<pre><code>&lt;audio src=&quot;&quot;&gt;&lt;/audio&gt;
+</code></pre>
+
+<h3>关于内核问题</h3>
+<pre><code>chrome, safari  -webkit-内核
+FireFox         -moz-内核
+IE              -ms-内核
+</code></pre>
+
+<p>国内的浏览器，除UC外，都是chromium（谷歌工程版）内核</p>
+<h2>第一个HTML页面</h2>
+<p>Talk is cheap, show me the code. - Linux 之父</p>
+<h3>HTML标签内有两部分：头(head) 身体(body)</h3>
+<p>头：配置当前html页面的信息，如：字符集编码，描述，关键字...
+身体：放html标记的，主要的页面内容。</p>
+<h3>HTML基本结构</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;第一个HTML页面&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Hello World!
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3>关键字与描述</h3>
+<blockquote>
+<p>如希望网站可以被搜索引擎识别，则可以加上关键字与描述的meta配置。</p>
+</blockquote>
+<pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;hello,world&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;This is my first Webpage.&quot;&gt;
+</code></pre>
+
+<h3>HTML标签属性</h3>
+<ol>
+<li>所有的属性都写在开始标签内。</li>
+<li>
+<p>属性的语法：</p>
+<pre><code>[属性名]=&quot;[属性值]&quot;
+</code></pre>
+
+</li>
+<li>
+<p>属性与属性之间用空格隔开。 </p>
+</li>
+</ol>
+<h2>HTML 常用元素</h2>
+<h3>换行符&lt; br &gt;</h3>
+<blockquote>
+<p>HTML标签内，所有单纯的空格与回车都只有1个空格生效，如需真正的换行，必须使用换行符<br></p>
+</blockquote>
+<h3>段落&lt; p &gt;</h3>
+<blockquote>
+<p>占满一行，并且拉大上下间隙的标签。主要用于分隔段落。</p>
+</blockquote>
+<h3>标题&lt;h[x]&gt; (1&lt;=x&lt;=6)</h3>
+<blockquote>
+<p>占满一行，加粗，只有h1 - 6，数字越小，字体越大。</p>
+</blockquote>
+<h3>文本格式化</h3>
+<pre><code>&lt;b&gt;bold 加粗&lt;/b&gt;
+&lt;i&gt;italic 斜体&lt;/i&gt;
+&lt;u&gt;underline 下划线&lt;/u&gt;
+&lt;del&gt;V0.0.1 单词:delete&lt;/del&gt;
+&lt;p&gt;2&lt;sup&gt;-2&lt;/sup&gt;=1/4 上标字&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O 下标字&lt;/p&gt;
+</code></pre>
+
+<h3>超链接<code>&lt;a&gt;</code></h3>
+<blockquote>
+<p>可以通过用户点击，跳转到某个页面，跳转地址在href内，切记加上协议（http://）</p>
+</blockquote>
+<pre><code>&lt;a href=&quot;http://baidu.com&quot; title=&quot;baidu.com&quot; target=&quot;_blank&quot;&gt;百度一下，你就知道。&lt;/a&gt;
+</code></pre>
+
+<blockquote>
+<p>title属性：鼠标停留在链接上提示的小标签
+target属性：配置跳转的链接的方式（_blank新标签页打开，_self在本页面跳转，默认是_self）</p>
+</blockquote>
+<h3>锚点 <code>#</code></h3>
+<blockquote>
+<p>定义一个锚点，可以使超链接跳转到当前页面内某个位置。（返回顶部，书籍目录浏览）</p>
+</blockquote>
+<pre><code>&lt;a name=&quot;锚点名&quot;&gt;&lt;/a&gt;
+......
+&lt;a href=&quot;#锚点名&quot;&gt;返回顶部&lt;/a&gt;
+&lt;!-- 点击此链接可弹到锚点所在的位置 --&gt;
+</code></pre>
+
+<blockquote>
+<p>注释（内容不会被编译，供开发者查看）：<code>&lt;!-- 注释内容 --&gt;</code></p>
+</blockquote>
+<h3>图像<code>&lt;img&gt;</code></h3>
+<pre><code>&lt;img src=&quot;goddess.jpg&quot; alt=&quot;女神...&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;
+</code></pre>
+
+<h4>属性：</h4>
+<ol>
+<li>src		源文件所在位置</li>
+<li>alt		图片加载失败时所显示的文字</li>
+<li>width		图片宽度</li>
+<li>height	图片高度</li>
+</ol>
+<blockquote>
+<p>注意：宽高一般用CSS处理，因为便于维护。</p>
+</blockquote>
+<h1>注意！目录名，文件名应使用英文命名！</h1>
+<h3>音频 <code>&lt;audio&gt;</code></h3>
+<pre><code>&lt;audio src=&quot;assets/medium/Always.mp3&quot; autoplay controls loop preload&gt;
+    &lt;!-- 如不兼容audio标签，会加载里面的source标签 --&gt;
+    &lt;source src=&quot;assets/medium/Always.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+    你的浏览器不支持Audio标签
+&lt;/audio&gt;
+</code></pre>
+
+<h4>属性：</h4>
+<ol>
+<li>autoplay：自动播放</li>
+<li>controls：播放控件（如：播放暂停按钮）</li>
+<li>loop：循环播放</li>
+<li>preload：预加载（如关心流量问题，则不要加上）</li>
+</ol>
+<blockquote>
+<p>如浏览器不支持audio标签，则会加载audio标签内的source标签。</p>
+</blockquote>
+<h3>视频<code>&lt;video&gt;</code></h3>
+<pre><code>&lt;video src=&quot;assets/medium/video.mp4&quot; width=&quot;100%&quot; height=&quot;100px&quot; autoplay controls loop muted preload&gt;
+    &lt;source src=&quot;assets/medium/video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+&lt;/video&gt;
+</code></pre>
+
+<h4>属性：</h4>
+<ol>
+<li>autoplay：自动播放</li>
+<li>controls：播放控件（如：播放暂停按钮）</li>
+<li>loop：循环播放</li>
+<li>muted：静音播放</li>
+<li>preload：预加载（如关心流量问题，则不要加上）</li>
+</ol>
+<blockquote>
+<p>source标签内的type，指的是文件类型的MIME</p>
+</blockquote>
+<h3>实体字符</h3>
+<blockquote>
+<p>有时候我们需要用到大于号（&gt;）或小于号（&lt;），当写在内容里的时候，会出现以下尴尬的情况：</p>
+</blockquote>
+<pre><code>&lt;h1&gt;&lt;h1&gt;&lt;/h1&gt;
+</code></pre>
+
+<blockquote>
+<p>大于号在这里有可能会被解析成语法，故需使用到实体字符，告诉浏览器，这是个真正的字符，而不是语法。</p>
+</blockquote>
+<pre><code>&lt;h1&gt;&amp;lt;h1&amp;gt;&lt;/h1&gt;
+&lt;h1&gt;&amp;copy; 2017 - 2018&lt;/h1&gt;
+</code></pre>
+
+<h4>常用的实体字符</h4>
+<ol>
+<li><code>&amp;gt;</code>	大于号</li>
+<li><code>&amp;lt;</code>	小于号</li>
+<li><code>&amp;copy;</code>	版权C</li>
+<li><code>&amp;nbsp;</code>	空格</li>
+</ol>
+<h3>无序列表</h3>
+<blockquote>
+<p>每一个列表项占满一行。规定语法为ul，ul里面包含N个li。</p>
+</blockquote>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;红烧牛肉面&lt;/li&gt;
+    &lt;li&gt;黑白配&lt;/li&gt;
+    &lt;li&gt;老坛酸菜牛肉面&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<blockquote>
+<p>ul通常被用作导航栏的主体编写。</p>
+<p>EMMET语法：ul&gt;li*N (N可以为任何&gt;0的数)</p>
+</blockquote>
+<h3>有序列表</h3>
+<blockquote>
+<p>与无序列表(ul)大同小异，只不过是每一个列表项多了个序号。</p>
+</blockquote>
+<pre><code>&lt;ol&gt;
+    &lt;li&gt;红烧牛肉面&lt;/li&gt;
+    &lt;li&gt;泡椒牛肉面&lt;/li&gt;
+    &lt;li&gt;绿帽子牛肉面&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+<h3>定义列表</h3>
+<pre><code>&lt;dl&gt;
+    &lt;dt&gt;日用品&lt;/dt&gt;
+    &lt;dd&gt;牙膏&lt;/dd&gt;
+
+    &lt;dt&gt;食品&lt;/dt&gt;
+    &lt;dd&gt;辣条&lt;/dd&gt;
+    &lt;dd&gt;酸溜梅&lt;/dd&gt;
+
+    &lt;dt&gt;数码产品&lt;/dt&gt;
+    &lt;dd&gt;笔记本&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+
+<blockquote>
+<p>EMMET语法：dl&gt;(dt+dd)*3</p>
+</blockquote>
+<h3>表格<code>&lt;table&gt;</code></h3>
+<blockquote>
+<p>EMMET语法：table&gt;tr * 行数 &gt; td * 列数 </p>
+</blockquote>
+<h4>属性：</h4>
+<ol>
+<li>border		表格边框	[number]</li>
+<li>width			宽度		[number],[%]</li>
+<li>height		高度		[number],[%]</li>
+<li>cellspacing	单元格间隔	[number]</li>
+</ol>
+<h4>合并单元格</h4>
+<blockquote>
+<p>每次写表格前，建议先把结构写好，再填内容。<br>
+可利用EMMET语法：tr &gt; td{$} * N (N&gt;0) <br>
+无论是“行合并“还是“列合并”都是给td标签加属性的。</p>
+</blockquote>
+<ol>
+<li>rowspan 行合并	[number &gt;=2]</li>
+</ol>
+<blockquote>
+<p>行合并后，要在下一行把对应序号的td标签去掉。（如：第一行的第二个td行合并，则第二行的第二个td要删掉）</p>
+</blockquote>
+<ol>
+<li>colspan 列合并	[number &gt;=2]</li>
+</ol>
+<blockquote>
+<p>列合并后，要把后面多出来的元素去掉。</p>
+</blockquote>
+<pre><code>&lt;table border=&quot;1&quot; width=&quot;100%&quot; height=&quot;200&quot; cellspacing=&quot;0&quot;&gt;
+    &lt;tr&gt;
+        &lt;td align=&quot;center&quot;&gt;1&lt;/td&gt;
+        &lt;td rowspan=&quot;3&quot;&gt;2&lt;/td&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td valign=&quot;top&quot;&gt;1&lt;/td&gt;
+        &lt;td colspan=&quot;2&quot;&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+<h3>内嵌框架&lt; iframe &gt;</h3>
+<blockquote>
+<p>在当前网页内嵌入另外一个网页，另一个网页url（地址）在src属性内填写。</p>
+</blockquote>
+<pre><code>&lt;a href=&quot;http://sohu.com&quot; target=&quot;yellow&quot;&gt;搜狐&lt;/a&gt;
+&lt;a href=&quot;http://baidu.com&quot; target=&quot;yellow&quot;&gt;百度两下&lt;/a&gt;
+&lt;a href=&quot;http://www.hnjtgc.com&quot; target=&quot;yellow&quot;&gt;鸡窝山大学&lt;/a&gt;
+
+&lt;iframe src=&quot;http://baidu.com&quot; width=&quot;300&quot; height=&quot;300&quot; scrolling=&quot;no&quot; name=&quot;yellow&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+
+<blockquote>
+<p>以上代码可以使a链接在iframe内跳转。</p>
+</blockquote>
+<h3>表单<code>&lt;form&gt;</code></h3>
+<blockquote>
+<p>这个东西异常的重要！它是前后端交接的媒介之一。<br>
+主要用于用户信息的输入。</p>
+</blockquote>
+<h4>例子 （登录功能）</h4>
+<blockquote>
+<p>后端文档： </p>
+</blockquote>
+<ol>
+<li>请求地址：http://plrabbit.com/Test/api.php</li>
+<li>请求方式：post</li>
+<li>请求参数：(1) username [string] (2) password [string]</li>
+</ol>
+<blockquote>
+<p>前端代码：</p>
+</blockquote>
+<pre><code>&lt;form action=&quot;http://plrabbit.com/Test/api.php&quot; method=&quot;post&quot; target=&quot;green&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;
+    &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;iframe src=&quot;http://baidu.com&quot; name=&quot;green&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+
+<h4>属性</h4>
+<ol>
+<li>action	请求地址</li>
+<li>method	请求方式（get, post）</li>
+</ol>
+<h3>输入框<code>&lt;input&gt;</code></h3>
+<blockquote>
+<p>提供给用户输入信息的元素。</p>
+</blockquote>
+<h4>属性：</h4>
+<ol>
+<li>type		输入框的类型</li>
+<li>name		暗号（请求参数）	</li>
+<li>value		值，代表请求的参数值</li>
+<li>placeholder	提示文字</li>
+<li>maxlength	最大字符输入长度（一般建议设置32 - 50，防止黑客利用代码注入）</li>
+</ol>
+<hr />
+<h4>非填值属性：</h4>
+<ol>
+<li>readonly	只读（没有样式变化）</li>
+<li>disabled	禁用输入框（会把功能也一起禁用，输入框的值不会被上传）</li>
+<li>autofocus	自动聚焦（把光标移动到当前输入框）</li>
+<li>required	要求用户必须填写的</li>
+</ol>
+<hr />
+<pre><code>&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;guest&quot; placeholder=&quot;请输入你的用户名...&quot;&gt;
+&lt;input type=&quot;password&quot; name=&quot;password&quot; value=&quot;123456&quot;&gt;
+</code></pre>
+
+<h5>name, value属性是发送到服务器进行处理的，非常的重要。name属性代表参数名，必须与后端设置的参数一致。value属性代表上传到服务器的参数值，可以通过输入框人为改变。加上value属性可以让输入框默认添加几个字符。</h5>
+<h5>当你按下提交按钮的时候，表单会自动帮我们打包数据，上传至服务器。</h5>
+<hr />
+<h3>几个常用的input</h3>
+<h4>单选框（input:radio）</h4>
+<blockquote>
+<p>有多少个选项，就写多少个input。<br>
+注意name属性要保持一致。<br>
+checked属性可以默认选中。</p>
+</blockquote>
+<pre><code>    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; checked&gt;男
+    &lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt;女
+    &lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt;保密
+</code></pre>
+
+<h4>多选框（input:checkbox）</h4>
+<blockquote>
+<p>用法与radio基本一致。</p>
+</blockquote>
+<pre><code>    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;swim&quot;&gt;游泳
+    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;run&quot;&gt;跑步
+    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;sleep&quot;&gt;睡觉
+</code></pre>
+
+<h3>按钮<code>&lt;button&gt;</code></h3>
+<blockquote>
+<p>按钮常用的有3种，submit(提交), reset(重置), button(普通按钮)</p>
+</blockquote>
+<pre><code>    &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+    &lt;button type=&quot;reset&quot;&gt;重置&lt;/button&gt;
+    &lt;button type=&quot;button&quot; onclick=&quot;location.href = 'http://baidu.com';&quot;&gt;我是一个普通按钮&lt;/button&gt;   
+</code></pre>
+
+<h3>多行文本框<code>&lt;textarea&gt;</code></h3>
+<pre><code>&lt;textarea rows=&quot;5&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;
+</code></pre>
+
+<h4>属性：</h4>
+<ol>
+<li>rows	行数/高度</li>
+<li>cols	列数/宽度</li>
+</ol>
+<h3>下拉框<code>&lt;select&gt;</code></h3>
+<pre><code>&lt;select name=&quot;city&quot;&gt;
+    &lt;optgroup label=&quot;中国&quot;&gt;
+        &lt;option value=&quot;gz&quot;&gt;广州&lt;/option&gt;
+        &lt;option value=&quot;hy&quot; selected&gt;衡阳&lt;/option&gt;
+        &lt;option value=&quot;cs&quot;&gt;长沙&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;其他&quot;&gt;
+        &lt;option value=&quot;ny&quot;&gt;纽约&lt;/option&gt;
+        &lt;option value=&quot;hsd&quot;&gt;华盛顿&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;
+</code></pre>
+
+<h4>用法</h4>
+<ol>
+<li>规定select在最外面</li>
+<li>如有需要，加上optgroup，组别名。组别名写在label属性中。</li>
+<li>在select里，或者optgroup里，加上option标签，表示下拉框选项。	</li>
+</ol>
+<h3>标签<code>&lt;label&gt;</code></h3>
+<blockquote>
+<p>一般表单里面给用户看的文本，不会直接裸露在外面。所以会有label标签接收，与一个input元素绑定，使其点击的时候，可以改变input的状态。<br>
+绑定方法：给input加id属性，label加for属性，俩属性保持一致。</p>
+</blockquote>
+<pre><code>&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;0&quot; checked id=&quot;male&quot;&gt;&lt;label for=&quot;male&quot;&gt;男&lt;/label&gt;
+</code></pre>
+
+<h2>布局</h2>
+<h3>块级元素（block）</h3>
+<blockquote>
+<p>默认占满一行的元素。
+比如：</p>
+</blockquote>
+<pre><code>div, h1-6, p , table , form , ul , ol , dl ...
+</code></pre>
+
+<h3>行内元素（inline）</h3>
+<blockquote>
+<p>只要窗口足够宽，一行内可以有无数个的元素。
+比如：</p>
+</blockquote>
+<pre><code>span, b, i , u, del , sup, sub...
+</code></pre>
+
+<h4>无论是block还是inline，都可以通过CSS改变，无需太在意。</h4>
+<h3>HTML5 布局新标签</h3>
+<blockquote>
+<p>在H4标准里面，所有的布局容器div+id，代码会略繁琐。<br>
+在H5标准内，每一部分的布局容器都有自己的标签。</p>
+</blockquote>
+<pre><code>&lt;header&gt;    头部
+&lt;nav&gt;       导航栏
+&lt;section&gt;   内容（区块）
+&lt;aside&gt;     边栏
+&lt;article&gt;   文章
+&lt;footer&gt;    脚部（版权）
+</code></pre>
+
+<blockquote>
+<p>一般body下面的标签，都建议用HTML5的标签。</p>
+</blockquote>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Test&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav&gt;
+        &lt;!-- 导航栏 --&gt;
+    &lt;/nav&gt;
+
+    &lt;section&gt;
+        &lt;!-- 内容 --&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
