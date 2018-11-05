@@ -3,7 +3,6 @@
 <head>
 <title>commonEl</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
 @font-face {
   font-family: octicons-link;
@@ -772,7 +771,7 @@ body {
 </code></pre>
 
 <p class="intro">以上5种字体效果如下图：</p>
-<p><center><img src="assets/HTML-02-01.png" class="bordered"  width="60%"></center>
+<p><center><img src="assets/HTML-02-01.png" class="bordered"></center>
 <center><small>图2-1 文字格式化效果图</small></center></p>
 <h3>2.1.3 语义化</h3>
 <p>语义化，就是在使用标签的时候多使用有英文语义的标签，比如h标签，在HTML中就是就是用来定义标题，还有p标签，英文是paragraph段落，table表格标签，等等。比如，不能说p标签可以替代h4标题这样（虽然效果差不多）。<strong>请注意HTML是一款语义化语言，这也是为什么加粗文字也有两个标签的原因。</strong></p>
@@ -804,18 +803,17 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 </code></pre>
 
 <p class="intro">以上代码效果如下图：</p>
-<p><center><img src="assets/HTML-02-02.png" class="bordered"  width="60%"></center>
+<p><center><img src="assets/HTML-02-02.png" class="bordered"></center>
 <center><small>图2-2 上下标文字示例</small></center></p>
 <h3>2.1.5 突出显示文本</h3>
 <p>HTML提供了一种给文字添加黄色背景色（荧光笔）的元素，用于标记突出的文字。</p>
 <pre><code>&lt;mark&gt;这是被标记的文字&lt;/mark&gt;
 </code></pre>
 
-<p class="intro">以上代码效果如下图：</p>
-<p><center><img src="assets/HTML-02-03.png" class="bordered"  width="60%"></center>
+<p><center><img src="assets/HTML-02-03.png" class="bordered"></center>
 <center><small>图2-3 标记文字</small></center></p>
 <h3>2.1.6 语言辅助阅读</h3>
-<p>HTML提供了对非西方文字的解决方案，用于辅助读者掌握表意语言文字的正确发音。比如：汉语拼音。</p>
+<p>HTML提供了辅助阅读非西方文字的解决方案，用于辅助读者掌握表意语言文字的正确发音。比如：汉语拼音。</p>
 <pre><code>&lt;ruby style=&quot;font-size: 200%;&quot;&gt; 
     饕&lt;rt&gt;tāo&lt;/rt&gt;
     餮&lt;rt&gt;tiè&lt;/rt&gt;
@@ -825,8 +823,7 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 <blockquote>
 <p>注意：这里style=&quot;font-size: 200%;&quot;是一个css样式，表示放大字体。</p>
 </blockquote>
-<p class="intro">以上代码效果如下图：</p>
-<p><center><img src="assets/HTML-02-04.png" class="bordered"  width="60%"></center>
+<p><center><img src="assets/HTML-02-04.png" class="bordered"></center>
 <center><small>图2-4 “饕餮”拼音注解</small></center></p>
 <h3>2.1.7 设置文本方向</h3>
 <p>HTML还提供了自定义文字输出方向的解决方案，bdo，其主要用于反转文字输出。<strong>bdo必须使用属性dir才可以设置，一共两个值：rtl（从右到左）和ltr（从左到右）。一般默认是ltr。</strong></p>
@@ -835,7 +832,7 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 </code></pre>
 
 <p class="intro">以上代码效果如下图：</p>
-<p><center><img src="assets/HTML-02-05.png" class="bordered"  width="60%"></center>
+<p><center><img src="assets/HTML-02-05.png" class="bordered"></center>
 <center><small>图2-5 bdo标签示例</small></center></p>
 <h3>2.1.8 字符实体</h3>
 <blockquote>
@@ -853,9 +850,9 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 <blockquote>
 <p>注意&与;这两个符号缺一不可，请注意代码规范！</p>
 </blockquote>
-<p class="intro">以上代码效果如下图：</p>
-<p><center><img src="assets/HTML-02-06.png" class="bordered" width="60%"></center>
+<p><center><img src="assets/HTML-02-06.png" class="bordered"></center>
 <center><small>图2-6 字符实体</small></center></p>
+<h4>常用的字符实体</h4>
 <table>
 <thead>
 <tr>
@@ -895,14 +892,16 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 	<td align="center"><code>&amp;nbsp;</code></td>
 	<td align="center">空格</td>
 </tr>
+<tr>
+	<td align="center">&quot;</td>
+	<td align="center"><code>&amp;quot;</code></td>
+	<td align="center">双引号</td>
+</tr>
 </tbody>
 </table>
-<p><center><small>表2-1 常用字符实体</small></center></p>
 <h2>2.2 分组元素</h2>
 <h3>2.2.1 段落 &lt;p&gt;</h3>
-<blockquote>
-<p>一个p元素占满一行，并且增加文字上下间隙。主要用于分隔段落。</p>
-</blockquote>
+<p>段落p标签（paragraph的缩写）是最基本的分组元素。在布局上占满一行，并且增加文字上下间隙，字体方面没特别的样式。主要用于段落分隔。</p>
 <pre><code>&lt;p&gt;这是一段话&lt;/p&gt;
 &lt;p&gt;这是另一段话&lt;/p&gt;
 </code></pre>
@@ -914,315 +913,114 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 &lt;!-- left 居左；right 居右 --&gt;
 </code></pre>
 
-<h3>标题<hX> (1&lt;=X&lt;=6)</h3>
-<blockquote>
-<p>占满一行，加粗，只有h1 - 6，数字越小，字体越大。</p>
-</blockquote>
-<h3>超链接<code>&lt;a&gt;</code></h3>
-<blockquote>
-<p>可以通过用户点击，跳转到某个页面，跳转地址在href内，切记加上协议（http://）</p>
-</blockquote>
-<pre><code>&lt;a href=&quot;http://baidu.com&quot; title=&quot;baidu.com&quot; target=&quot;_blank&quot;&gt;百度一下，你就知道。&lt;/a&gt;
+<p><center><img src="assets/HTML-02-07.png" class="bordered"></center>
+<center><small>图2-7 段落元素</small></center></p>
+<h3>2.2.2 引用 &lt;blockquote&gt;</h3>
+<p>这个标签与p比较相似，主要是用于文章中的引用文字。在布局上，除了文字上下的间隙增加，还有左右方向的缩进。</p>
+<pre><code>&lt;blockquote&gt;To be or not to be, that's the question. - 莎士比亚&lt;/blockquote&gt;
+</code></pre>
+
+<p><center><img src="assets/HTML-02-08.png" class="bordered"></center>
+<center><small>图2-8 引用元素</small></center></p>
+<h3>2.2.3 标题 &lt;hX&gt; (1&lt;=X&lt;=6)</h3>
+<p>标题h标签（heading的缩写）有6个，分别是h1, h2, ...,h6，代表一到六级标题。注意一级标题（h1）是最大的，六级标题（h6）是最小的。在布局上，占满一行并增加文字上下间隙。样式方面，字体会加粗，并且根据标题级别缩放字体大小。</p>
+<pre><code>&lt;h1&gt;这是一级标题&lt;/h1&gt;
+&lt;h2&gt;这是二级标题&lt;/h2&gt;
+&lt;h3&gt;这是三级标题&lt;/h3&gt;
+&lt;h4&gt;这是四级标题&lt;/h4&gt;
+&lt;h5&gt;这是五级标题&lt;/h5&gt;
+&lt;h6&gt;这是六级标题&lt;/h6&gt;
+
+&lt;h7&gt;没有七级标题&lt;/h7&gt;
+&lt;!-- 没有h7标签，但文字需要渲染，浏览器会使用默认的样式 --&gt;
 </code></pre>
 
 <blockquote>
-<p>title属性：鼠标停留在链接上提示的小标签
-target属性：配置跳转的链接的方式（_blank新标签页打开，_self在本页面跳转，默认是_self）</p>
+<p>标题元素也可以添加align属性，自定义文字对齐方式。</p>
 </blockquote>
-<h3>锚点 <code>#</code></h3>
-<blockquote>
-<p>定义一个锚点，可以使超链接跳转到当前页面内某个位置。（返回顶部，书籍目录浏览）</p>
-</blockquote>
-<pre><code>&lt;a name=&quot;锚点名&quot;&gt;&lt;/a&gt;
-......
-&lt;a href=&quot;#锚点名&quot;&gt;返回顶部&lt;/a&gt;
-&lt;!-- 点击此链接可弹到锚点所在的位置 --&gt;
+<pre><code>&lt;h3 align=&quot;center&quot;&gt;居中的三级标题&lt;/h3&gt;
+&lt;!-- left 居左；right 居右 --&gt;
 </code></pre>
 
+<p><center><img src="assets/HTML-02-09.png" class="bordered"></center>
+<center><small>图2-9 标题元素</small></center></p>
+<h3>2.2.4 格式化输出 &lt;pre&gt;</h3>
+<p>HTML中的文本需要换行必须添加<code>&lt;br&gt;</code>，如果换行多了，一篇文章的结构就会乱套了。当然，HTML提供了一些解决方案，比如p标签与pre标签。pre标签可以把我们在编辑器的文字排版原封不动地输出到页面里，通常用作简单的文字排版。</p>
 <blockquote>
-<p>注释（内容不会被编译，供开发者查看）：<code>&lt;!-- 注释内容 --&gt;</code></p>
+<p>在布局上，pre占满一行，字体样式没有变化。</p>
 </blockquote>
-<h3>图像<code>&lt;img&gt;</code></h3>
-<pre><code>&lt;img src=&quot;goddess.jpg&quot; alt=&quot;女神...&quot; width=&quot;100&quot; height=&quot;100&quot;&gt;
+<pre><code>&lt;pre&gt;
+    #####
+       #####
+        #####
+      #####
+    #####
+&lt;/pre&gt;
 </code></pre>
 
-<h4>属性：</h4>
-<ol>
-<li>src		源文件所在位置</li>
-<li>alt		图片加载失败时所显示的文字</li>
-<li>width		图片宽度</li>
-<li>height	图片高度</li>
-</ol>
+<p><center><img src="assets/HTML-02-10.png" class="bordered"></center>
+<center><small>图2-10 pre元素</small></center></p>
+<h3>2.2.5 插图文字 &lt;figure&gt;</h3>
+<p>HTML提供了一种图文并茂的解决方案，可以把图片和文字介绍结合一起管理。通常figure标签里面会有一个figcaption标签，用于区分文字与图片并换行。在布局上，figure和figcaption标签都占满一行，除了段落空隙外，还有左右方向上的缩进（效果与blockquote类似）。</p>
 <blockquote>
-<p>注意：宽高一般用CSS处理，因为便于维护。</p>
+<p>注意这里用到了<code>&lt;img&gt;</code>图片标签，会在后面的“嵌入元素”里详细讲解。另外图片可以命名为test.jpg，然后放在html文件的同一目录。</p>
 </blockquote>
-<h1>注意！目录名，文件名应使用英文命名！</h1>
-<h3>音频 <code>&lt;audio&gt;</code></h3>
-<pre><code>&lt;audio src=&quot;assets/medium/Always.mp3&quot; autoplay controls loop preload&gt;
-    &lt;!-- 如不兼容audio标签，会加载里面的source标签 --&gt;
-    &lt;source src=&quot;assets/medium/Always.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
-    你的浏览器不支持Audio标签
-&lt;/audio&gt;
+<pre><code>&lt;figure&gt;
+    &lt;img src=&quot;test.jpg&quot;&gt;
+    &lt;figcaption&gt;Super Boy&lt;/figcaption&gt;
+&lt;/figure&gt;
 </code></pre>
 
-<h4>属性：</h4>
-<ol>
-<li>autoplay：自动播放</li>
-<li>controls：播放控件（如：播放暂停按钮）</li>
-<li>loop：循环播放</li>
-<li>preload：预加载（如关心流量问题，则不要加上）</li>
-</ol>
-<blockquote>
-<p>如浏览器不支持audio标签，则会加载audio标签内的source标签。</p>
-</blockquote>
-<h3>视频<code>&lt;video&gt;</code></h3>
-<pre><code>&lt;video src=&quot;assets/medium/video.mp4&quot; width=&quot;100%&quot; height=&quot;100px&quot; autoplay controls loop muted preload&gt;
-    &lt;source src=&quot;assets/medium/video.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
+<p><center><img src="assets/HTML-02-11.png" class="bordered"></center>
+<center><small>图2-11 插图文字</small></center></p>
+<h3>2.2.6 分隔线 &lt;hr&gt;</h3>
+<p>hr标签可以提供一条占满一行的分隔线。注意hr标签是单标签的用法，没有结束标签。分隔线的样式可以通过它特定的属性改变：</p>
+<table>
+<thead>
+<tr>
+	<th align="center">属性名</th>
+	<th align="center">值</th>
+	<th align="center">用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">size</td>
+	<td align="center">整数</td>
+	<td align="center">分隔线的厚度（高度）</td>
+</tr>
+<tr>
+	<td align="center">width</td>
+	<td align="center">像素值，百分比</td>
+	<td align="center">分隔线的宽度</td>
+</tr>
+<tr>
+	<td align="center">align</td>
+	<td align="center">left, center, right</td>
+	<td align="center">分隔线的对齐方式</td>
+</tr>
+<tr>
+	<td align="center">noshade</td>
+	<td align="center">——</td>
+	<td align="center">分隔线默认是立体的（有一定size后），添加该属性后会变为扁平化的线。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：hr的属性只需要了解即可，W3C官方也不推荐我们用属性来改变hr的样式，而应交由CSS来处理为宜。但由于现在还存在较多保留旧技术的项目，故需了解这些技术的用法。</strong></p>
+<pre><code>春晓
+&lt;hr size=&quot;6&quot;&gt;
+春眠不觉晓
+&lt;hr width=&quot;40%&quot;&gt;
+处处闻啼鸟
+&lt;hr size=&quot;6&quot; width=&quot;60px&quot; noshade&gt;
+夜来风雨声
+&lt;hr size=&quot;6&quot; width=&quot;30%&quot; align=&quot;center&quot;&gt;
+花落知多少
 </code></pre>
 
-<h4>属性：</h4>
-<ol>
-<li>autoplay：自动播放</li>
-<li>controls：播放控件（如：播放暂停按钮）</li>
-<li>loop：循环播放</li>
-<li>muted：静音播放</li>
-<li>preload：预加载（如关心流量问题，则不要加上）</li>
-</ol>
-<blockquote>
-<p>source标签内的type，指的是文件类型的MIME</p>
-</blockquote>
-<h3>无序列表</h3>
-<blockquote>
-<p>每一个列表项占满一行。规定语法为ul，ul里面包含N个li。</p>
-</blockquote>
-<pre><code>&lt;ul&gt;
-    &lt;li&gt;红烧牛肉面&lt;/li&gt;
-    &lt;li&gt;黑白配&lt;/li&gt;
-    &lt;li&gt;老坛酸菜牛肉面&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-
-<blockquote>
-<p>ul通常被用作导航栏的主体编写。</p>
-<p>EMMET语法：ul&gt;li*N (N可以为任何&gt;0的数)</p>
-</blockquote>
-<h3>有序列表</h3>
-<blockquote>
-<p>与无序列表(ul)大同小异，只不过是每一个列表项多了个序号。</p>
-</blockquote>
-<pre><code>&lt;ol&gt;
-    &lt;li&gt;红烧牛肉面&lt;/li&gt;
-    &lt;li&gt;泡椒牛肉面&lt;/li&gt;
-    &lt;li&gt;绿帽子牛肉面&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre>
-
-<h3>定义列表</h3>
-<pre><code>&lt;dl&gt;
-    &lt;dt&gt;日用品&lt;/dt&gt;
-    &lt;dd&gt;牙膏&lt;/dd&gt;
-
-    &lt;dt&gt;食品&lt;/dt&gt;
-    &lt;dd&gt;辣条&lt;/dd&gt;
-    &lt;dd&gt;酸溜梅&lt;/dd&gt;
-
-    &lt;dt&gt;数码产品&lt;/dt&gt;
-    &lt;dd&gt;笔记本&lt;/dd&gt;
-&lt;/dl&gt;
-</code></pre>
-
-<blockquote>
-<p>EMMET语法：dl&gt;(dt+dd)*3</p>
-</blockquote>
-<h3>表格<code>&lt;table&gt;</code></h3>
-<blockquote>
-<p>EMMET语法：table&gt;tr * 行数 &gt; td * 列数 </p>
-</blockquote>
-<h4>属性：</h4>
-<ol>
-<li>border		表格边框	[number]</li>
-<li>width			宽度		[number],[%]</li>
-<li>height		高度		[number],[%]</li>
-<li>cellspacing	单元格间隔	[number]</li>
-</ol>
-<h4>合并单元格</h4>
-<blockquote>
-<p>每次写表格前，建议先把结构写好，再填内容。<br>
-可利用EMMET语法：tr &gt; td{$} * N (N&gt;0) <br>
-无论是“行合并“还是“列合并”都是给td标签加属性的。</p>
-</blockquote>
-<ol>
-<li>rowspan 行合并	[number &gt;=2]</li>
-</ol>
-<blockquote>
-<p>行合并后，要在下一行把对应序号的td标签去掉。（如：第一行的第二个td行合并，则第二行的第二个td要删掉）</p>
-</blockquote>
-<ol>
-<li>colspan 列合并	[number &gt;=2]</li>
-</ol>
-<blockquote>
-<p>列合并后，要把后面多出来的元素去掉。</p>
-</blockquote>
-<pre><code>&lt;table border=&quot;1&quot; width=&quot;100%&quot; height=&quot;200&quot; cellspacing=&quot;0&quot;&gt;
-    &lt;tr&gt;
-        &lt;td align=&quot;center&quot;&gt;1&lt;/td&gt;
-        &lt;td rowspan=&quot;3&quot;&gt;2&lt;/td&gt;
-        &lt;td&gt;3&lt;/td&gt;
-        &lt;td&gt;4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td valign=&quot;top&quot;&gt;1&lt;/td&gt;
-        &lt;td colspan=&quot;2&quot;&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;1&lt;/td&gt;
-        &lt;td&gt;3&lt;/td&gt;
-        &lt;td&gt;4&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-</code></pre>
-
-<h3>内嵌框架&lt; iframe &gt;</h3>
-<blockquote>
-<p>在当前网页内嵌入另外一个网页，另一个网页url（地址）在src属性内填写。</p>
-</blockquote>
-<pre><code>&lt;a href=&quot;http://sohu.com&quot; target=&quot;yellow&quot;&gt;搜狐&lt;/a&gt;
-&lt;a href=&quot;http://baidu.com&quot; target=&quot;yellow&quot;&gt;百度两下&lt;/a&gt;
-&lt;a href=&quot;http://www.hnjtgc.com&quot; target=&quot;yellow&quot;&gt;鸡窝山大学&lt;/a&gt;
-
-&lt;iframe src=&quot;http://baidu.com&quot; width=&quot;300&quot; height=&quot;300&quot; scrolling=&quot;no&quot; name=&quot;yellow&quot;&gt;&lt;/iframe&gt;
-</code></pre>
-
-<blockquote>
-<p>以上代码可以使a链接在iframe内跳转。</p>
-</blockquote>
-<h3>表单<code>&lt;form&gt;</code></h3>
-<blockquote>
-<p>这个东西异常的重要！它是前后端交接的媒介之一。<br>
-主要用于用户信息的输入。</p>
-</blockquote>
-<h4>例子 （登录功能）</h4>
-<blockquote>
-<p>后端文档： </p>
-</blockquote>
-<ol>
-<li>请求地址：http://plrabbit.com/Test/api.php</li>
-<li>请求方式：post</li>
-<li>请求参数：(1) username [string] (2) password [string]</li>
-</ol>
-<blockquote>
-<p>前端代码：</p>
-</blockquote>
-<pre><code>&lt;form action=&quot;http://plrabbit.com/Test/api.php&quot; method=&quot;post&quot; target=&quot;green&quot;&gt;
-    &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;
-    &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;
-    &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
-&lt;/form&gt;
-
-&lt;iframe src=&quot;http://baidu.com&quot; name=&quot;green&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
-</code></pre>
-
-<h4>属性</h4>
-<ol>
-<li>action	请求地址</li>
-<li>method	请求方式（get, post）</li>
-</ol>
-<h3>输入框<code>&lt;input&gt;</code></h3>
-<blockquote>
-<p>提供给用户输入信息的元素。</p>
-</blockquote>
-<h4>属性：</h4>
-<ol>
-<li>type		输入框的类型</li>
-<li>name		暗号（请求参数）	</li>
-<li>value		值，代表请求的参数值</li>
-<li>placeholder	提示文字</li>
-<li>maxlength	最大字符输入长度（一般建议设置32 - 50，防止黑客利用代码注入）</li>
-</ol>
-<hr />
-<h4>非填值属性：</h4>
-<ol>
-<li>readonly	只读（没有样式变化）</li>
-<li>disabled	禁用输入框（会把功能也一起禁用，输入框的值不会被上传）</li>
-<li>autofocus	自动聚焦（把光标移动到当前输入框）</li>
-<li>required	要求用户必须填写的</li>
-</ol>
-<hr />
-<pre><code>&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;guest&quot; placeholder=&quot;请输入你的用户名...&quot;&gt;
-&lt;input type=&quot;password&quot; name=&quot;password&quot; value=&quot;123456&quot;&gt;
-</code></pre>
-
-<h5>name, value属性是发送到服务器进行处理的，非常的重要。name属性代表参数名，必须与后端设置的参数一致。value属性代表上传到服务器的参数值，可以通过输入框人为改变。加上value属性可以让输入框默认添加几个字符。</h5>
-<h5>当你按下提交按钮的时候，表单会自动帮我们打包数据，上传至服务器。</h5>
-<hr />
-<h3>几个常用的input</h3>
-<h4>单选框（input:radio）</h4>
-<blockquote>
-<p>有多少个选项，就写多少个input。<br>
-注意name属性要保持一致。<br>
-checked属性可以默认选中。</p>
-</blockquote>
-<pre><code>    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; checked&gt;男
-    &lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt;女
-    &lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt;保密
-</code></pre>
-
-<h4>多选框（input:checkbox）</h4>
-<blockquote>
-<p>用法与radio基本一致。</p>
-</blockquote>
-<pre><code>    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;swim&quot;&gt;游泳
-    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;run&quot;&gt;跑步
-    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;sleep&quot;&gt;睡觉
-</code></pre>
-
-<h3>按钮<code>&lt;button&gt;</code></h3>
-<blockquote>
-<p>按钮常用的有3种，submit(提交), reset(重置), button(普通按钮)</p>
-</blockquote>
-<pre><code>    &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
-    &lt;button type=&quot;reset&quot;&gt;重置&lt;/button&gt;
-    &lt;button type=&quot;button&quot; onclick=&quot;location.href = 'http://baidu.com';&quot;&gt;我是一个普通按钮&lt;/button&gt;   
-</code></pre>
-
-<h3>多行文本框<code>&lt;textarea&gt;</code></h3>
-<pre><code>&lt;textarea rows=&quot;5&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;
-</code></pre>
-
-<h4>属性：</h4>
-<ol>
-<li>rows	行数/高度</li>
-<li>cols	列数/宽度</li>
-</ol>
-<h3>下拉框<code>&lt;select&gt;</code></h3>
-<pre><code>&lt;select name=&quot;city&quot;&gt;
-    &lt;optgroup label=&quot;中国&quot;&gt;
-        &lt;option value=&quot;gz&quot;&gt;广州&lt;/option&gt;
-        &lt;option value=&quot;hy&quot; selected&gt;衡阳&lt;/option&gt;
-        &lt;option value=&quot;cs&quot;&gt;长沙&lt;/option&gt;
-    &lt;/optgroup&gt;
-    &lt;optgroup label=&quot;其他&quot;&gt;
-        &lt;option value=&quot;ny&quot;&gt;纽约&lt;/option&gt;
-        &lt;option value=&quot;hsd&quot;&gt;华盛顿&lt;/option&gt;
-    &lt;/optgroup&gt;
-&lt;/select&gt;
-</code></pre>
-
-<h4>用法</h4>
-<ol>
-<li>规定select在最外面</li>
-<li>如有需要，加上optgroup，组别名。组别名写在label属性中。</li>
-<li>在select里，或者optgroup里，加上option标签，表示下拉框选项。	</li>
-</ol>
-<h3>标签<code>&lt;label&gt;</code></h3>
-<blockquote>
-<p>一般表单里面给用户看的文本，不会直接裸露在外面。所以会有label标签接收，与一个input元素绑定，使其点击的时候，可以改变input的状态。<br>
-绑定方法：给input加id属性，label加for属性，俩属性保持一致。</p>
-</blockquote>
-<pre><code>&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;0&quot; checked id=&quot;male&quot;&gt;&lt;label for=&quot;male&quot;&gt;男&lt;/label&gt;
-</code></pre>
-
+<p class="intro">效果如下图：</p>
+<p><center><img src="assets/HTML-02-12.png" class="bordered"></center>
+<center><small>图2-12 分隔线</small></center></p>
 
 </body>
 </html>
