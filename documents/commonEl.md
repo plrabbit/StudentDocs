@@ -189,6 +189,7 @@ HTML还提供了自定义文字输出方向的解决方案，bdo，其主要用�
 
 <center><img src="assets/HTML-02-09.png" class="bordered"></center>
 <center><small>图2-9 标题元素</small></center>
+<br>
 
 ### 2.2.4 格式化输出 &lt;pre&gt;
 
@@ -252,3 +253,38 @@ noshade|——|分隔线默认是立体的（有一定size后），添加该属�
 
 ### 2.2.7 无序列表
 
+列表是一种经常用于展示的元素，分为：无序列表、有序列表、定义列表。
+
+无序列表常用于展示一些与顺序无关的项目。比如，我们可以说聊天工具有微信和QQ；也可以说聊天工具有QQ和微信。它们二者位置互换并不影响意思的表达。**另外，无序列表经常用作编写：导航栏、下拉菜单等UI组件。**
+
+<p class="intro">无序列表语法如下：</p>
+
+	<ul>
+		<li>列表项1</li>
+		<li>列表项2</li>
+		......
+	</ul>
+
+无序列表的UI表现：每个li前面都会有个小圆点；上下方向的外边距，左边40px的内边距（CSS会有所提及）。
+
+	<p>饮用水品牌：</p>
+	<ul>
+		<li>怡宝</li>
+		<li>农夫山泉</li>
+		<li>昆仑山</li>
+	</ul>
+
+<center><img src="assets/HTML-02-13.png" class="bordered"></center>
+<center><small>图2-13 默认无序列表</small></center>
+
+另外，圆点的样式可以通过给ul加type属性改变：**（disc 实心圆；circle 空心圆；square 实心正方形）**
+
+	<p>饮用水品牌：</p>
+	<ul type="circle">
+		<li>怡宝</li>
+		<li>农夫山泉</li>
+		<li>昆仑山</li>
+	</ul>
+
+<center><img src="assets/HTML-02-14.png" class="bordered"></center>
+<center><small>图2-14 空心圆无序列表</small></center>

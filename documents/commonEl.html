@@ -481,6 +481,10 @@ body h3 {
   font-size: 1.25em;
 }
 
+body h3.nextPage {
+  page-break-before: always;
+}
+
 body h4 {
   font-size: 1em;
 }
@@ -943,7 +947,8 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 </code></pre>
 
 <p><center><img src="assets/HTML-02-09.png" class="bordered"></center>
-<center><small>图2-9 标题元素</small></center></p>
+<center><small>图2-9 标题元素</small></center>
+<br></p>
 <h3>2.2.4 格式化输出 &lt;pre&gt;</h3>
 <p>HTML中的文本需要换行必须添加<code>&lt;br&gt;</code>，如果换行多了，一篇文章的结构就会乱套了。当然，HTML提供了一些解决方案，比如p标签与pre标签。pre标签可以把我们在编辑器的文字排版原封不动地输出到页面里，通常用作简单的文字排版。</p>
 <blockquote>
@@ -1021,6 +1026,39 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 <p class="intro">效果如下图：</p>
 <p><center><img src="assets/HTML-02-12.png" class="bordered"></center>
 <center><small>图2-12 分隔线</small></center></p>
+<h3>2.2.7 无序列表</h3>
+<p>列表是一种经常用于展示的元素，分为：无序列表、有序列表、定义列表。</p>
+<p>无序列表常用于展示一些与顺序无关的项目。比如，我们可以说聊天工具有微信和QQ；也可以说聊天工具有QQ和微信。它们二者位置互换并不影响意思的表达。<strong>另外，无序列表经常用作编写：导航栏、下拉菜单等UI组件。</strong></p>
+<p class="intro">无序列表语法如下：</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;列表项1&lt;/li&gt;
+    &lt;li&gt;列表项2&lt;/li&gt;
+    ......
+&lt;/ul&gt;
+</code></pre>
+
+<p>无序列表的UI表现：每个li前面都会有个小圆点；上下方向的外边距，左边40px的内边距（CSS会有所提及）。</p>
+<pre><code>&lt;p&gt;饮用水品牌：&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;怡宝&lt;/li&gt;
+    &lt;li&gt;农夫山泉&lt;/li&gt;
+    &lt;li&gt;昆仑山&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p><center><img src="assets/HTML-02-13.png" class="bordered"></center>
+<center><small>图2-13 默认无序列表</small></center></p>
+<p>另外，圆点的样式可以通过给ul加type属性改变：<strong>（disc 实心圆；circle 空心圆；square 实心正方形）</strong></p>
+<pre><code>&lt;p&gt;饮用水品牌：&lt;/p&gt;
+&lt;ul type=&quot;circle&quot;&gt;
+    &lt;li&gt;怡宝&lt;/li&gt;
+    &lt;li&gt;农夫山泉&lt;/li&gt;
+    &lt;li&gt;昆仑山&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p><center><img src="assets/HTML-02-14.png" class="bordered"></center>
+<center><small>图2-14 空心圆无序列表</small></center></p>
 
 </body>
 </html>

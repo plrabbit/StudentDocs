@@ -475,6 +475,10 @@ body h3 {
   font-size: 1.25em;
 }
 
+body h3.nextPage {
+  page-break-before: always;
+}
+
 body h4 {
   font-size: 1em;
 }
