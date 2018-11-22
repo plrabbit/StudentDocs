@@ -1026,10 +1026,9 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 <p class="intro">效果如下图：</p>
 <p><center><img src="assets/HTML-02-12.png" class="bordered"></center>
 <center><small>图2-12 分隔线</small></center></p>
-<h3>2.2.7 无序列表</h3>
+<h3>2.2.7 无序列表 &lt;ul&gt;</h3>
 <p>列表是一种经常用于展示的元素，分为：无序列表、有序列表、定义列表。</p>
-<p>无序列表常用于展示一些与顺序无关的项目。比如，我们可以说聊天工具有微信和QQ；也可以说聊天工具有QQ和微信。它们二者位置互换并不影响意思的表达。<strong>另外，无序列表经常用作编写：导航栏、下拉菜单等UI组件。</strong></p>
-<p class="intro">无序列表语法如下：</p>
+<p>无序列表常用于展示一些与顺序无关的项目。比如，我们可以说聊天工具有微信和QQ；也可以说聊天工具有QQ和微信。它们二者位置互换并不影响意思的表达。<strong>另外，无序列表经常用作编写：导航栏、下拉菜单等UI组件。</strong>其语法如下：</p>
 <pre><code>&lt;ul&gt;
     &lt;li&gt;列表项1&lt;/li&gt;
     &lt;li&gt;列表项2&lt;/li&gt;
@@ -1048,7 +1047,8 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 
 <p><center><img src="assets/HTML-02-13.png" class="bordered"></center>
 <center><small>图2-13 默认无序列表</small></center></p>
-<p>另外，圆点的样式可以通过给ul加type属性改变：<strong>（disc 实心圆；circle 空心圆；square 实心正方形）</strong></p>
+<p>另外，圆点的样式可以通过给ul加type属性改变：</p>
+<p><strong>（disc 实心圆；circle 空心圆；square 实心正方形）</strong></p>
 <pre><code>&lt;p&gt;饮用水品牌：&lt;/p&gt;
 &lt;ul type=&quot;circle&quot;&gt;
     &lt;li&gt;怡宝&lt;/li&gt;
@@ -1059,6 +1059,48 @@ HCl + NaOH = NaCl + H&lt;sub&gt;2&lt;/sub&gt;O
 
 <p><center><img src="assets/HTML-02-14.png" class="bordered"></center>
 <center><small>图2-14 空心圆无序列表</small></center></p>
+<h3>2.2.8 有序列表 &lt;ol&gt;</h3>
+<p>有序列表常用于跟顺序有关的展示，如步骤或者是一些需要数字序号的项目。其
+语法如下：</p>
+<pre><code>&lt;ol&gt;
+    &lt;li&gt;列表项1&lt;/li&gt;
+    &lt;li&gt;列表项2&lt;/li&gt;
+    ......
+&lt;/ol&gt;
+</code></pre>
+
+<p>与无序列表类似，上下方向的外边距，左边40px的内边距（CSS会有所提及）。只是小圆点换成了数字序号。</p>
+<pre><code>&lt;p&gt;如何把大象塞进冰箱：&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;打开冰箱&lt;/li&gt;
+    &lt;li&gt;把大象塞进去&lt;/li&gt;
+    &lt;li&gt;关闭冰箱&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+<p><center><img src="assets/HTML-02-15.png" class="bordered"></center>
+<center><small>图2-15 默认有序列表</small></center></p>
+<p>数字序号的样式可以通过给ol标签添加type属性改变：</p>
+<p><strong>（1 数字，a 小写字母，A 大写字母，i 小写罗马数字，I 大写罗马数字）</strong></p>
+<pre><code>&lt;p&gt;如何把大象塞进冰箱：&lt;/p&gt;
+&lt;ol type=&quot;I&quot;&gt;
+    &lt;li&gt;打开冰箱&lt;/li&gt;
+    &lt;li&gt;把大象塞进去&lt;/li&gt;
+    &lt;li&gt;关闭冰箱&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+<p>另外，还可以通过给ol添加start属性，改变第一个列表项的序号。</p>
+<pre><code>&lt;p&gt;如何把大象塞进冰箱：&lt;/p&gt;
+&lt;ol type=&quot;A&quot; start=&quot;3&quot;&gt;
+    &lt;li&gt;打开冰箱&lt;/li&gt;
+    &lt;li&gt;把大象塞进去&lt;/li&gt;
+    &lt;li&gt;关闭冰箱&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+<p><center><img src="assets/HTML-02-16.png" class="bordered"></center>
+<center><small>图2-16 自定义的有序列表</small></center></p>
 
 </body>
 </html>

@@ -251,13 +251,11 @@ noshade|——|分隔线默认是立体的（有一定size后），添加该属�
 <center><img src="assets/HTML-02-12.png" class="bordered"></center>
 <center><small>图2-12 分隔线</small></center>
 
-### 2.2.7 无序列表
+### 2.2.7 无序列表 &lt;ul&gt;
 
 列表是一种经常用于展示的元素，分为：无序列表、有序列表、定义列表。
 
-无序列表常用于展示一些与顺序无关的项目。比如，我们可以说聊天工具有微信和QQ；也可以说聊天工具有QQ和微信。它们二者位置互换并不影响意思的表达。**另外，无序列表经常用作编写：导航栏、下拉菜单等UI组件。**
-
-<p class="intro">无序列表语法如下：</p>
+无序列表常用于展示一些与顺序无关的项目。比如，我们可以说聊天工具有微信和QQ；也可以说聊天工具有QQ和微信。它们二者位置互换并不影响意思的表达。**另外，无序列表经常用作编写：导航栏、下拉菜单等UI组件。**其语法如下：
 
 	<ul>
 		<li>列表项1</li>
@@ -277,7 +275,9 @@ noshade|——|分隔线默认是立体的（有一定size后），添加该属�
 <center><img src="assets/HTML-02-13.png" class="bordered"></center>
 <center><small>图2-13 默认无序列表</small></center>
 
-另外，圆点的样式可以通过给ul加type属性改变：**（disc 实心圆；circle 空心圆；square 实心正方形）**
+另外，圆点的样式可以通过给ul加type属性改变：
+
+**（disc 实心圆；circle 空心圆；square 实心正方形）**
 
 	<p>饮用水品牌：</p>
 	<ul type="circle">
@@ -288,3 +288,49 @@ noshade|——|分隔线默认是立体的（有一定size后），添加该属�
 
 <center><img src="assets/HTML-02-14.png" class="bordered"></center>
 <center><small>图2-14 空心圆无序列表</small></center>
+
+### 2.2.8 有序列表 &lt;ol&gt;
+
+有序列表常用于跟顺序有关的展示，如步骤或者是一些需要数字序号的项目。其
+语法如下：
+
+	<ol>
+		<li>列表项1</li>
+		<li>列表项2</li>
+		......
+	</ol>
+
+与无序列表类似，上下方向的外边距，左边40px的内边距（CSS会有所提及）。只是小圆点换成了数字序号。
+
+	<p>如何把大象塞进冰箱：</p>
+	<ol>
+		<li>打开冰箱</li>
+		<li>把大象塞进去</li>
+		<li>关闭冰箱</li>
+	</ol>
+
+<center><img src="assets/HTML-02-15.png" class="bordered"></center>
+<center><small>图2-15 默认有序列表</small></center>
+
+数字序号的样式可以通过给ol标签添加type属性改变：
+
+**（1 数字，a 小写字母，A 大写字母，i 小写罗马数字，I 大写罗马数字）**
+
+	<p>如何把大象塞进冰箱：</p>
+	<ol type="A">
+		<li>打开冰箱</li>
+		<li>把大象塞进去</li>
+		<li>关闭冰箱</li>
+	</ol>
+
+另外，还可以通过给ol添加start属性，改变第一个列表项的序号。
+
+	<p>如何把大象塞进冰箱：</p>
+	<ol type="A" start="3">
+		<li>打开冰箱</li>
+		<li>把大象塞进去</li>
+		<li>关闭冰箱</li>
+	</ol>
+
+<center><img src="assets/HTML-02-16.png" class="bordered"></center>
+<center><small>图2-16 自定义的有序列表</small></center>
